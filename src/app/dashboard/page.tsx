@@ -5,11 +5,11 @@ import {
   ClipboardCheck,
   FileChartColumn,
   Plus,
-  Search,
   Target,
   WalletCards,
 } from "lucide-react";
 import { AppSidebar } from "@/components/dashboard/AppSidebar";
+import { GlobalCommand } from "@/components/navigation/GlobalCommand";
 import { IntelligenceMetric } from "@/components/intelligence/IntelligenceMetric";
 import { DemoAuditTable } from "@/components/intelligence/DemoAuditTable";
 import { OpportunityCard } from "@/components/intelligence/OpportunityCard";
@@ -30,7 +30,7 @@ export default function DashboardPage() {
       <div className="noise" />
       <AppSidebar />
 
-      <section className="relative px-5 pb-16 pt-6 lg:ml-[276px] lg:px-10 xl:px-14">
+      <section className="relative px-5 pb-16 pt-6 lg:ml-[260px] lg:px-10 xl:px-14">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute right-0 top-0 h-[36rem] w-[36rem] bg-[radial-gradient(circle,rgba(190,145,64,0.09),transparent_67%)]"
@@ -60,24 +60,14 @@ export default function DashboardPage() {
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <button
-                type="button"
-                className="inline-flex items-center justify-between gap-5 rounded-full border border-white/[0.08] bg-white/[0.025] px-5 py-3 text-xs text-white/35 transition hover:border-white/15 hover:text-white/65 sm:min-w-[230px]"
-              >
-                <span className="inline-flex items-center gap-2">
-                  <Search size={15} />
-                  Cerca nella piattaforma
-                </span>
-
-                <span className="text-[9px] text-white/20">⌘ K</span>
-              </button>
+              <GlobalCommand />
 
               <Link
                 href="/audits/new"
                 className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#d1aa62] px-6 py-3 text-xs font-medium text-[#171008] shadow-[0_18px_50px_rgba(183,137,62,0.12)] transition hover:bg-[#e4c47d]"
               >
                 <Plus size={16} />
-                Nuovo audit
+                Nuovo progetto
                 <ArrowUpRight
                   size={15}
                   className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
