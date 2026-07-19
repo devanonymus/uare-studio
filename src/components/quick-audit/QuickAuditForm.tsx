@@ -4,13 +4,13 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import {
   ArrowRight,
+  AtSign,
   Bot,
   Building2,
-  Facebook,
   Globe2,
-  Instagram,
   MapPin,
   Search,
+  Share2,
   UserRound,
   Video,
 } from "lucide-react";
@@ -184,7 +184,7 @@ export function QuickAuditForm() {
 
             <Field
               label="Instagram"
-              icon={Instagram}
+              icon={AtSign}
               value={form.instagram}
               placeholder="@nomeristorante"
               onChange={(value) => update("instagram", value)}
@@ -192,7 +192,7 @@ export function QuickAuditForm() {
 
             <Field
               label="Facebook"
-              icon={Facebook}
+              icon={Share2}
               value={form.facebook}
               placeholder="Link della pagina"
               onChange={(value) => update("facebook", value)}
