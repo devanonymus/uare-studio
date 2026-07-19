@@ -70,4 +70,32 @@ export type QuickAuditResult = {
   };
   input: QuickAuditInput;
   demoAnalysis: true;
+  intelligence?: {
+    strategicDiagnosis: string;
+    mainCommercialGap: string;
+    brandProfile: {
+      inferredPositioning: string;
+      restaurantArchetype: string;
+      perceivedAudience: string[];
+      strengths: string[];
+      weaknesses: string[];
+      differentiators: string[];
+    } | null;
+    demoBlueprint: {
+      archetype: string;
+      positioning: string;
+      audience: string[];
+      tone: string[];
+      paletteDirection: string;
+      typographyDirection: string;
+      heroStrategy: string;
+      primaryCta: string;
+      secondaryCta: string;
+      sections: string[];
+      visualAssets: string[];
+    } | null;
+    confidence: number;
+    limitations: string[];
+    analysisMode: "ai_research" | "local_fallback";
+  };
 };

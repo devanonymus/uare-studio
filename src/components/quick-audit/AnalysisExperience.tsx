@@ -97,8 +97,43 @@ export function AnalysisExperience() {
         }, index * 1150),
       );
 
-      const completionTimer = window.setTimeout(() => {
-        const generatedResult = generateQuickAudit(parsedInput);
+      const completionTimer = window.setTimeout(async () => {
+        let generatedResult: QuickAuditResult;
+
+        try {
+          const response = await fetch(
+            "/api/intelligence/analyze",
+            {
+              method: "POST",
+              headers: {
+                "Content-Type": "application/json",
+              },
+              body: JSON.stringify(parsedInput),
+            },
+          );
+
+          const payload = (await response.json()) as {
+            result?: QuickAuditResult;
+            error?: string;
+          };
+
+          if (!response.ok || !payload.result) {
+            throw new Error(
+              payload.error ||
+                "Analisi AI temporaneamente non disponibile.",
+            );
+          }
+
+          generatedResult = payload.result;
+        } catch (error) {
+          console.error(
+            "Fallback analisi locale:",
+            error,
+          );
+
+          generatedResult =
+            generateQuickAudit(parsedInput);
+        }
 
         window.localStorage.setItem(
           RESULT_KEY,
