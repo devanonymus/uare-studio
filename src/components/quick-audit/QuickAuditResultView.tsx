@@ -311,8 +311,8 @@ export function QuickAuditResultView({ result }: Props) {
                 ))}
               </div>
 
-              <button
-                type="button"
+              <Link
+                href="/growth-plan"
                 className="group mt-8 inline-flex items-center gap-4 rounded-full bg-[#d1aa62] px-6 py-4 text-xs font-medium text-[#171008] transition hover:bg-[#e4c47d]"
               >
                 Genera piano di crescita
@@ -320,7 +320,7 @@ export function QuickAuditResultView({ result }: Props) {
                   size={15}
                   className="transition group-hover:translate-x-1"
                 />
-              </button>
+              </Link>
             </div>
           </section>
         </div>
