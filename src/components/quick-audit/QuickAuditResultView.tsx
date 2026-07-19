@@ -351,10 +351,10 @@ export function QuickAuditResultView({ result }: Props) {
           </div>
 
           <Link
-            href="/audits/sakura"
+            href="/demo-generator"
             className="group inline-flex shrink-0 items-center gap-4 rounded-full border border-[#caa563]/25 bg-[#caa563]/[0.06] px-6 py-4 text-xs text-[#e0c17e] transition hover:bg-[#caa563]/[0.12]"
           >
-            Apri Concept Sakura
+            Genera concept personalizzato
             <ArrowRight
               size={15}
               className="transition group-hover:translate-x-1"
