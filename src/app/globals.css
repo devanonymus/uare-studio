@@ -170,3 +170,171 @@ body {
     rgba(210, 168, 95, 0.24)
     rgba(255, 255, 255, 0.025);
 }
+
+/* STARTUP_HOME_V3 */
+
+.startup-home {
+  background:
+    radial-gradient(circle at 12% 5%, rgba(0, 216, 255, 0.1), transparent 30%),
+    radial-gradient(circle at 88% 8%, rgba(117, 92, 255, 0.16), transparent 33%),
+    radial-gradient(circle at 55% 95%, rgba(255, 79, 216, 0.08), transparent 38%),
+    #080a13;
+}
+
+.startup-grid-bg {
+  opacity: 0.5;
+  background-image:
+    linear-gradient(rgba(255,255,255,.028) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255,255,255,.028) 1px, transparent 1px);
+  background-size: 48px 48px;
+  mask-image: linear-gradient(to bottom, black, rgba(0,0,0,.72) 67%, transparent);
+}
+
+.startup-glow {
+  pointer-events: none;
+  position: fixed;
+  border-radius: 999px;
+  filter: blur(150px);
+}
+
+.startup-glow-one {
+  left: -14rem;
+  top: 9rem;
+  width: 38rem;
+  height: 38rem;
+  background: rgba(0, 216, 255, .08);
+}
+
+.startup-glow-two {
+  right: -14rem;
+  top: -10rem;
+  width: 45rem;
+  height: 45rem;
+  background: rgba(117, 92, 255, .13);
+}
+
+.startup-glow-three {
+  left: 35%;
+  bottom: -28rem;
+  width: 48rem;
+  height: 48rem;
+  background: rgba(255, 79, 216, .08);
+}
+
+.startup-logo {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  font-size: 18px;
+  font-weight: 800;
+  color: white;
+  background: linear-gradient(135deg, #00dfff, #5d6cff 50%, #ff4fd8);
+  box-shadow: 0 12px 35px rgba(92, 92, 255, .32);
+}
+
+.startup-gradient-title {
+  color: transparent;
+  background: linear-gradient(100deg, #00e5ff, #4f7cff 33%, #875cff 65%, #ff4fd8);
+  background-size: 180% auto;
+  background-clip: text;
+  -webkit-background-clip: text;
+  animation: startup-title-flow 6s linear infinite;
+}
+
+@keyframes startup-title-flow {
+  from { background-position: 0% center; }
+  to { background-position: 180% center; }
+}
+
+.startup-header-button,
+.startup-main-button {
+  color: white;
+  background: linear-gradient(105deg, #347cff, #765cff 52%, #d34fff);
+  box-shadow: 0 20px 65px rgba(98, 85, 255, .32);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.startup-header-button {
+  border-radius: 999px;
+}
+
+.startup-main-button {
+  border-radius: 17px;
+}
+
+.startup-header-button:hover,
+.startup-main-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 28px 80px rgba(98, 85, 255, .44);
+}
+
+.startup-app-window {
+  border: 1px solid rgba(255,255,255,.1);
+  background:
+    linear-gradient(145deg, rgba(255,255,255,.055), transparent 38%),
+    rgba(12,16,29,.92);
+  box-shadow:
+    0 50px 150px rgba(0,0,0,.52),
+    inset 0 1px 0 rgba(255,255,255,.04);
+  backdrop-filter: blur(30px);
+}
+
+.startup-ui-card {
+  border: 1px solid rgba(255,255,255,.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(150deg, rgba(255,255,255,.045), transparent 45%),
+    rgba(18,24,42,.88);
+  box-shadow:
+    0 25px 80px rgba(0,0,0,.27),
+    inset 0 1px 0 rgba(255,255,255,.035);
+  backdrop-filter: blur(24px);
+}
+
+.startup-ui-card:hover {
+  border-color: rgba(120,104,255,.23);
+}
+
+.startup-brain {
+  z-index: 2;
+  display: flex;
+  width: 116px;
+  height: 116px;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(167,139,250,.3);
+  border-radius: 38px;
+  background: linear-gradient(135deg, rgba(59,130,246,.25), rgba(124,58,237,.25), rgba(236,72,153,.22));
+  box-shadow: 0 0 80px rgba(109,92,252,.3);
+}
+
+.startup-orbit {
+  position: absolute;
+  border-radius: 999px;
+  border-style: dashed;
+  animation: startup-orbit-spin linear infinite;
+}
+
+.startup-orbit-one {
+  width: 245px;
+  height: 245px;
+  border-width: 1px;
+  border-color: rgba(103,232,249,.2);
+  animation-duration: 25s;
+}
+
+.startup-orbit-two {
+  width: 180px;
+  height: 180px;
+  border-width: 1px;
+  border-color: rgba(232,121,249,.22);
+  animation-duration: 34s;
+  animation-direction: reverse;
+}
+
+@keyframes startup-orbit-spin {
+  to { transform: rotate(360deg); }
+}
