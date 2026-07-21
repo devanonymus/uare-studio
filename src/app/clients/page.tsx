@@ -3,7 +3,7 @@ import { ArrowLeft } from "lucide-react";
 
 export default function Page() {
   return (
-    <main className="flex min-h-screen items-center justify-center bg-[#050505] px-6">
+    <main className="workspace-page flex min-h-screen items-center justify-center bg-[#050505] px-6">
       <div className="noise" />
 
       <section className="panel relative w-full max-w-2xl rounded-[32px] p-8 text-center md:p-12">

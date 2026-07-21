@@ -10,7 +10,7 @@ import { SectorSelector } from "@/components/projects/SectorSelector";
 
 export default function NewProjectPage() {
   return (
-    <main className="min-h-screen bg-[#070708] px-5 py-8 md:px-10 md:py-10">
+    <main className="workspace-page min-h-screen bg-[#070708] px-5 py-8 md:px-10 md:py-10">
       <div className="noise" />
 
       <div className="mx-auto max-w-7xl">

@@ -4,7 +4,7 @@ import { AuditWizard } from "@/components/audit/AuditWizard";
 
 export default function ManualAuditPage() {
   return (
-    <main className="min-h-screen bg-[#050505] px-5 py-8 md:px-10">
+    <main className="workspace-page min-h-screen bg-[#050505] px-5 py-8 md:px-10">
       <div className="noise" />
 
       <div className="mx-auto mb-8 max-w-6xl">

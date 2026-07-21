@@ -46,11 +46,11 @@ export default function DashboardPage() {
   const recentProjects = demoRestaurants.slice(1, 5);
 
   return (
-    <main className="min-h-screen bg-[#070708]">
+    <main className="workspace-page min-h-screen bg-[#070708]">
       <div className="noise" />
       <AppSidebar />
 
-      <section className="relative px-4 pb-20 pt-5 lg:ml-[260px] lg:px-8 xl:px-12">
+      <section className="relative px-4 pb-20 pt-5 lg:ml-[112px] lg:px-8 xl:px-12">
         <div
           aria-hidden="true"
           className="pointer-events-none absolute right-0 top-0 h-[42rem] w-[42rem] bg-[radial-gradient(circle,rgba(195,148,73,0.075),transparent_65%)]"

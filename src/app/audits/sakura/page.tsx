@@ -3,7 +3,7 @@ import { ArrowLeft, ArrowRight, LockKeyhole } from "lucide-react";
 
 export default function SakuraPage() {
   return (
-    <main className="relative flex min-h-screen items-center justify-center overflow-hidden bg-[#030303] px-6">
+    <main className="workspace-page relative flex min-h-screen items-center justify-center overflow-hidden bg-[#030303] px-6">
       <div className="noise" />
 
       <div
