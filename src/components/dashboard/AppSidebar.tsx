@@ -82,7 +82,7 @@ export function AppSidebar() {
         </div>
 
         <Link
-          href="/audits/new"
+          href="/projects/new"
           className="group mt-7 flex items-center justify-between rounded-[18px] bg-[#d2aa62] px-4 py-3.5 text-xs font-medium text-[#171008] transition hover:bg-[#e5c47e]"
         >
           <span className="inline-flex items-center gap-3">
@@ -189,7 +189,7 @@ export function AppSidebar() {
           <GlobalCommand compact />
 
           <Link
-            href="/audits/new"
+            href="/projects/new"
             className="flex size-10 items-center justify-center rounded-full bg-[#d1aa62] text-[#171008]"
           >
             <Plus size={17} />

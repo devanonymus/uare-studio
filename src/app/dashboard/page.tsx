@@ -83,7 +83,7 @@ export default function DashboardPage() {
               <GlobalCommand />
 
               <Link
-                href="/audits/new"
+                href="/projects/new"
                 className="group inline-flex items-center justify-center gap-3 rounded-full bg-[#d1aa62] px-6 py-3.5 text-xs font-medium text-[#171008] shadow-[0_20px_55px_rgba(188,140,59,0.13)] transition hover:bg-[#e5c47e]"
               >
                 <Plus size={16} />
@@ -257,7 +257,7 @@ export default function DashboardPage() {
 
               <div className="mt-7 space-y-3">
                 <QuickAction
-                  href="/audits/new"
+                  href="/projects/new"
                   title="Avvia nuovo progetto"
                   detail="Business discovery e analisi"
                   icon={Plus}
