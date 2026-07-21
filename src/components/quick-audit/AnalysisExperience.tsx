@@ -44,7 +44,7 @@ const phases = [
   },
   {
     title: "Elaborazione del Digital Experience Score",
-    detail: "Applicazione del Metodo UAE e delle priorità",
+    detail: "Applicazione del Metodo UVIQ e delle priorità",
   },
   {
     title: "Generazione del piano di intervento",
@@ -222,7 +222,7 @@ export function AnalysisExperience() {
           </motion.div>
 
           <p className="mt-8 text-[9px] uppercase tracking-[0.42em] text-[#caa563]">
-            UAE Intelligence
+            UVIQ Intelligence
           </p>
 
           <h1 className="font-display mt-4 text-4xl text-[#f5f0e7] md:text-6xl">

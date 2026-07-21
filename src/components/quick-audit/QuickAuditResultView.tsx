@@ -118,7 +118,7 @@ export function QuickAuditResultView({ result }: Props) {
             </h2>
 
             <p className="mt-4 max-w-sm text-xs leading-6 text-white/34">
-              Valutazione preliminare elaborata secondo il Metodo UAE.
+              Valutazione preliminare elaborata secondo il Metodo UVIQ.
             </p>
           </section>
 

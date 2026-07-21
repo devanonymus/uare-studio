@@ -215,7 +215,7 @@ export function DemoGenerator() {
             <div>
               <div className="flex items-center gap-3">
                 <p className="text-[9px] uppercase tracking-[0.27em] text-[#caa563]">
-                  UAE Demo Generator
+                  UVIQ Demo Generator
                 </p>
 
                 <span className="rounded-full border border-emerald-300/15 bg-emerald-300/[0.05] px-2.5 py-1 text-[7px] uppercase tracking-[0.16em] text-emerald-300/70">
@@ -403,7 +403,7 @@ export function DemoGenerator() {
           <div className="mt-6 flex flex-col justify-between gap-4 border-t border-white/[0.055] pt-5 md:flex-row md:items-center">
             <div>
               <p className="text-[8px] uppercase tracking-[0.22em] text-white/20">
-                Concept generato da UAE Intelligence
+                Concept generato da UVIQ Intelligence
               </p>
 
               <p className="mt-2 text-[10px] text-white/30">
@@ -981,7 +981,7 @@ function RestaurantDemo({
           </div>
 
           <p className="text-[8px]" style={{ color: theme.muted }}>
-            Concept digitale dimostrativo · UAE Intelligence
+            Concept digitale dimostrativo · UVIQ Intelligence
           </p>
         </div>
       </footer>

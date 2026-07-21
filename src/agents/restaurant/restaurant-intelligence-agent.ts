@@ -250,7 +250,7 @@ export async function generateRestaurantIntelligence({
           {
             type: "input_text",
             text: `
-Sei UAE Restaurant Intelligence Agent.
+Sei UVIQ Sector Intelligence Agent.
 
 Agisci come un gruppo composto da:
 - consulente aziendale;
@@ -313,7 +313,7 @@ REGOLE:
 
   if (!response.output_text) {
     throw new Error(
-      "Il Restaurant Intelligence Agent non ha prodotto un risultato.",
+      "Il Sector Intelligence Agent non ha prodotto un risultato.",
     );
   }
 

@@ -61,7 +61,7 @@ export default function DashboardPage() {
             <div>
               <div className="flex flex-wrap items-center gap-3">
                 <p className="text-[9px] uppercase tracking-[0.34em] text-[#caa563]">
-                  UAE Intelligence
+                  UVIQ Intelligence
                 </p>
 
                 <span className="rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1 text-[8px] uppercase tracking-[0.18em] text-white/28">
@@ -435,7 +435,7 @@ export default function DashboardPage() {
           </section>
 
           <footer className="mt-10 flex flex-col justify-between gap-3 border-t border-white/[0.05] pt-6 text-[8px] uppercase tracking-[0.2em] text-white/14 sm:flex-row">
-            <span>UAE Intelligence Platform</span>
+            <span>UVIQ Intelligence Platform</span>
             <span>Univibe Group · Workspace v0.2</span>
           </footer>
         </div>

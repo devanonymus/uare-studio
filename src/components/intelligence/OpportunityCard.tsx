@@ -16,7 +16,7 @@ export function OpportunityCard() {
 
         <div>
           <p className="text-[9px] uppercase tracking-[0.27em] text-[#caa563]">
-            UAE Intelligence
+            UVIQ Intelligence
           </p>
 
           <h2 className="font-display mt-1 text-2xl text-[#f3eee5]">

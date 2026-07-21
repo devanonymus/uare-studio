@@ -90,3 +90,83 @@ a {
   opacity: 0.025;
   background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 180 180' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.88' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='.8'/%3E%3C/svg%3E");
 }
+
+/* =====================================================
+   UVIQ DESIGN SYSTEM
+   ===================================================== */
+
+:root {
+  --uviq-bg: #070709;
+  --uviq-surface: #0d0d10;
+  --uviq-surface-soft: #121216;
+  --uviq-border: rgba(255, 255, 255, 0.065);
+  --uviq-text: #f4f1eb;
+  --uviq-muted: rgba(255, 255, 255, 0.36);
+  --uviq-gold: #d2a85f;
+  --uviq-gold-light: #f0cf8a;
+}
+
+html {
+  background: var(--uviq-bg);
+}
+
+body {
+  background:
+    radial-gradient(
+      circle at 50% -20%,
+      rgba(197, 147, 66, 0.05),
+      transparent 42%
+    ),
+    var(--uviq-bg);
+  color: var(--uviq-text);
+  font-family: var(--font-geist), Arial, sans-serif;
+}
+
+.font-display {
+  font-family: var(--font-geist), Arial, sans-serif;
+}
+
+.font-mono {
+  font-family: var(--font-geist-mono), monospace;
+}
+
+.gold-text {
+  background: linear-gradient(
+    120deg,
+    #87602b 0%,
+    #d1a65b 34%,
+    #f1d18f 52%,
+    #c4974c 72%,
+    #7c5524 100%
+  );
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.panel {
+  border: 1px solid var(--uviq-border);
+  background:
+    linear-gradient(
+      145deg,
+      rgba(255, 255, 255, 0.025),
+      transparent 45%
+    ),
+    rgba(13, 13, 16, 0.86);
+  box-shadow:
+    0 30px 100px rgba(0, 0, 0, 0.24),
+    inset 0 1px 0 rgba(255, 255, 255, 0.025);
+  backdrop-filter: blur(22px);
+}
+
+::selection {
+  background: rgba(210, 168, 95, 0.3);
+  color: #fff;
+}
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color:
+    rgba(210, 168, 95, 0.24)
+    rgba(255, 255, 255, 0.025);
+}

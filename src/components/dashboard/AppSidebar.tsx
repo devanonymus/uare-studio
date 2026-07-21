@@ -177,7 +177,7 @@ export function AppSidebar() {
           </div>
 
           <p className="mt-4 px-2 text-[7px] uppercase tracking-[0.22em] text-white/13">
-            UAE Intelligence · Univibe Group
+            UVIQ Intelligence · Univibe Group
           </p>
         </div>
       </aside>

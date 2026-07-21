@@ -8,7 +8,7 @@ export default function Page() {
 
       <section className="panel relative w-full max-w-2xl rounded-[32px] p-8 text-center md:p-12">
         <p className="text-[9px] uppercase tracking-[0.38em] text-[#caa563]">
-          UARE Studio
+          UVIQ Studio
         </p>
 
         <h1 className="font-display mt-4 text-4xl capitalize text-[#f5f0e7]">

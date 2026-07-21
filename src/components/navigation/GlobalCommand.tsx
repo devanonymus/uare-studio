@@ -299,7 +299,7 @@ export function GlobalCommand({ compact = false }: GlobalCommandProps) {
             </div>
 
             <footer className="flex items-center justify-between border-t border-white/[0.06] px-5 py-3 text-[8px] uppercase tracking-[0.16em] text-white/18">
-              <span>UAE Intelligence Command Center</span>
+              <span>UVIQ Intelligence Command Center</span>
 
               <span>↑↓ Naviga · ↵ Apri · Esc Chiudi</span>
             </footer>

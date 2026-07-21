@@ -29,7 +29,7 @@ export async function POST(request: Request) {
       intelligence,
     });
   } catch (error) {
-    console.error("Restaurant Intelligence Engine:", error);
+    console.error("Sector Intelligence Engine:", error);
 
     return NextResponse.json(
       {
@@ -37,7 +37,7 @@ export async function POST(request: Request) {
         error:
           error instanceof Error
             ? error.message
-            : "Errore nel Restaurant Intelligence Engine.",
+            : "Errore nel Sector Intelligence Engine.",
       },
       {
         status: 500,

@@ -17,7 +17,7 @@ export default function SakuraPage() {
           className="absolute -top-20 left-0 inline-flex items-center gap-2 text-[10px] uppercase tracking-[0.2em] text-white/28 transition hover:text-white/70"
         >
           <ArrowLeft size={14} />
-          UARE Studio
+          UVIQ Studio
         </Link>
 
         <LockKeyhole

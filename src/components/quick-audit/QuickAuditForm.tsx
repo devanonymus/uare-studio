@@ -91,7 +91,7 @@ export function QuickAuditForm() {
       <header className="border-b border-white/[0.055] pb-8">
         <div className="flex items-center gap-3">
           <span className="rounded-full border border-[#caa563]/16 bg-[#caa563]/[0.05] px-3 py-1 text-[8px] uppercase tracking-[0.2em] text-[#caa563]">
-            UAE Intelligence
+            UVIQ Intelligence
           </span>
 
           <span className="text-[9px] uppercase tracking-[0.24em] text-white/24">
@@ -284,7 +284,7 @@ export function QuickAuditForm() {
 
           <section className="rounded-[28px] border border-[#caa563]/15 bg-[#caa563]/[0.045] p-6">
             <p className="text-[9px] uppercase tracking-[0.25em] text-[#caa563]">
-              Metodo UAE
+              Metodo UVIQ
             </p>
 
             <p className="mt-4 text-xs leading-6 text-white/40">

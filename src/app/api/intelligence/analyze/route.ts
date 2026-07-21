@@ -183,7 +183,7 @@ export async function POST(request: Request) {
           type: "json_schema",
           name: "uae_restaurant_intelligence",
           description:
-            "Report strutturato UAE Intelligence per ristoranti asiatici.",
+            "Report strutturato UVIQ Intelligence per ristoranti asiatici.",
           strict: true,
           schema: z.toJSONSchema(AIIntelligenceSchema, {
             target: "draft-7",
@@ -208,14 +208,14 @@ export async function POST(request: Request) {
       mode: "ai_research",
     });
   } catch (error) {
-    console.error("UAE Intelligence error:", error);
+    console.error("UVIQ Intelligence error:", error);
 
     return NextResponse.json(
       {
         error:
           error instanceof Error
             ? error.message
-            : "Errore durante l’analisi UAE Intelligence.",
+            : "Errore durante l’analisi UVIQ Intelligence.",
       },
       { status: 500 },
     );

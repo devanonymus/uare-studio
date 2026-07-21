@@ -1,22 +1,37 @@
 import type { Metadata } from "next";
-import { Cormorant_Garamond, Inter } from "next/font/google";
+import { Geist, Geist_Mono } from "next/font/google";
+import { PRODUCT } from "@/core/brand/identity";
 import "./globals.css";
 
-const inter = Inter({
+const geist = Geist({
   subsets: ["latin"],
-  variable: "--font-inter",
+  variable: "--font-geist",
 });
 
-const cormorant = Cormorant_Garamond({
+const geistMono = Geist_Mono({
   subsets: ["latin"],
-  variable: "--font-cormorant",
-  weight: ["400", "500", "600", "700"],
+  variable: "--font-geist-mono",
 });
 
 export const metadata: Metadata = {
-  title: "UARE Studio | Univibe",
-  description:
-    "Piattaforma professionale per audit e trasformazione digitale dei ristoranti asiatici.",
+  title: {
+    default: `${PRODUCT.fullName} | ${PRODUCT.company}`,
+    template: `%s | ${PRODUCT.name}`,
+  },
+  description: PRODUCT.description,
+  applicationName: PRODUCT.fullName,
+  keywords: [
+    "business intelligence",
+    "AI audit",
+    "digital intelligence",
+    "commercial intelligence",
+    "multisector analysis",
+    "Univibe",
+  ],
+  robots: {
+    index: false,
+    follow: false,
+  },
 };
 
 export default function RootLayout({
@@ -26,7 +41,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="it">
-      <body className={`${inter.variable} ${cormorant.variable}`}>
+      <body
+        className={`${geist.variable} ${geistMono.variable}`}
+      >
         {children}
       </body>
     </html>
