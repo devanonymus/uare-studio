@@ -89,7 +89,14 @@ export default async function SectorDiscoveryPage({
           </header>
 
           <section className="mt-8">
-            <BusinessDiscoveryForm sector={sector} />
+            <BusinessDiscoveryForm
+              sector={{
+                id: sector.id,
+                name: sector.name,
+                description: sector.description,
+                conversionGoals: sector.conversionGoals,
+              }}
+            />
           </section>
         </div>
       </section>

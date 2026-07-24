@@ -10,10 +10,20 @@ import {
   Target,
   Users,
 } from "lucide-react";
-import type { SectorDefinition } from "@/core/sectors/types";
+import type {
+  SectorConversionGoal,
+  SectorId,
+} from "@/core/sectors/types";
+
+type SerializableSector = {
+  id: SectorId;
+  name: string;
+  description: string;
+  conversionGoals: SectorConversionGoal[];
+};
 
 type BusinessDiscoveryFormProps = {
-  sector: SectorDefinition;
+  sector: SerializableSector;
 };
 
 export function BusinessDiscoveryForm({
