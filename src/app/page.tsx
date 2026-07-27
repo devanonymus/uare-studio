@@ -1,3 +1,4 @@
+import { HomeConversionConfigurator } from "@/components/home/HomeConversionConfigurator";
 import { HomeNavbar } from "@/components/home/HomeNavbar";
 import Image from "next/image";
 import Link from "next/link";
@@ -252,7 +253,52 @@ export default function HomePage() {
             </div>
           </div>
 
-          <MissionControlPreview />
+          <HomeConversionConfigurator />
+        </div>
+
+        <div className="mt-14 grid overflow-hidden rounded-[18px] border border-white/[0.09] bg-[#0B1628] sm:grid-cols-3 xl:grid-cols-6">
+          {[
+            "Business Intelligence",
+            "Strategia",
+            "Content Factory",
+            "CRM",
+            "Automazioni",
+            "Analytics",
+          ].map((item) => (
+            <div
+              key={item}
+              className="flex min-h-20 items-center justify-center border-b border-r border-white/[0.06] px-4 text-center text-[9px] font-bold uppercase tracking-[0.11em] text-[#D5DFEA] last:border-r-0 sm:border-b-0"
+            >
+              <span className="mr-2 size-1.5 rounded-full bg-[#FF6B1A]" />
+              {item}
+            </div>
+          ))}
+        </div>
+
+        <div className="mt-5 flex flex-col items-center justify-between gap-4 rounded-[16px] border border-[#24D27C]/15 bg-[#24D27C]/[0.045] px-5 py-4 text-center md:flex-row md:text-left">
+          <div className="flex items-center gap-3">
+            <span className="flex size-9 items-center justify-center rounded-full bg-[#24D27C]/10 text-[#8AF0BA]">
+              <CheckCircle2 size={16} />
+            </span>
+
+            <div>
+              <p className="text-[10px] font-semibold text-white">
+                Configurazione guidata e senza impegno
+              </p>
+
+              <p className="mt-1 text-[8px] text-[#AAB9CC]">
+                Scopri quali moduli servono davvero alla tua azienda.
+              </p>
+            </div>
+          </div>
+
+          <Link
+            href="/pricing"
+            className="inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.12em] text-[#FF8A4A]"
+          >
+            Consulta piani e costi
+            <ArrowRight size={13} />
+          </Link>
         </div>
       </section>
 
