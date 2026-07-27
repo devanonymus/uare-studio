@@ -705,3 +705,37 @@ select:focus {
 [class*="border-[#caa563]"] {
   border-color: rgba(118, 92, 255, 0.28) !important;
 }
+
+/* UVIQ INTELLIGENCE SETUP */
+
+.uviq-field-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8A97A8;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+/* =========================================================
+   UVIQ HOME NAVIGATION
+   ========================================================= */
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 140px;
+}
+
+body {
+  overflow-anchor: none;
+}
+
+#product,
+#functions,
+#sectors,
+#department,
+#pricing {
+  scroll-margin-top: 140px;
+}

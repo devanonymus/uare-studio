@@ -1,3 +1,4 @@
+import { HomeNavbar } from "@/components/home/HomeNavbar";
 import Image from "next/image";
 import Link from "next/link";
 import {
@@ -188,7 +189,7 @@ export default function HomePage() {
     <main className="min-h-screen overflow-hidden bg-[#07111F] text-white">
       <Background />
 
-      <Navbar />
+      <HomeNavbar />
 
       <section
         id="product"
@@ -583,103 +584,6 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
-  );
-}
-
-function Navbar() {
-  const navItems = [
-    ["Prodotto", "#product"],
-    ["Funzioni", "#functions"],
-    ["Settori", "#sectors"],
-    ["Reparto AI", "#department"],
-    ["Pricing", "#pricing"],
-  ];
-
-  return (
-    <header className="sticky top-0 z-50 px-4 pt-4 md:px-7">
-      <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[20px] border border-white/[0.1] bg-[#081425]/95 shadow-[0_20px_60px_rgba(0,0,0,.35)] backdrop-blur-2xl">
-        <div className="flex min-h-[92px] items-center justify-between px-5 md:px-8">
-          <Link href="/" className="flex items-center gap-4">
-            <span className="flex size-14 items-center justify-center rounded-[14px] border border-[#2492E8]/20 bg-[#0D1D34] p-2">
-              <Image
-                src="/uviq-logo.svg"
-                alt="UVIQ"
-                width={44}
-                height={44}
-                priority
-                className="size-full object-contain"
-              />
-            </span>
-
-            <span className="hidden sm:block">
-              <span className="flex items-center gap-3">
-                <span className="text-2xl font-bold tracking-[-0.06em]">
-                  UVIQ
-                </span>
-
-                <span className="rounded-full bg-[#2492E8] px-3 py-1.5 text-[7px] font-bold uppercase tracking-[0.12em]">
-                  AI OS
-                </span>
-              </span>
-
-              <span className="mt-1 block text-[7px] font-semibold uppercase tracking-[0.28em] text-[#B7C4D4]">
-                AI Business Operating System
-              </span>
-            </span>
-          </Link>
-
-          <nav className="hidden items-center gap-8 lg:flex">
-            {navItems.map(([label, href], index) => (
-              <a
-                key={label}
-                href={href}
-                className="group relative flex min-h-12 items-center text-[10px] font-bold text-white transition hover:text-[#FF8A4A]"
-              >
-                {label}
-
-                <span
-                  className={`absolute bottom-0 h-0.5 rounded-full transition-all ${
-                    index === 0
-                      ? "w-full bg-[#FF6B1A]"
-                      : "w-0 bg-[#2492E8] group-hover:w-full"
-                  }`}
-                />
-              </a>
-            ))}
-          </nav>
-
-          <div className="flex items-center gap-3">
-            <Link
-              href="/dashboard"
-              className="hidden min-h-12 items-center gap-3 rounded-[13px] border border-white/[0.13] bg-[#091323] px-5 text-[10px] font-bold text-white transition hover:border-[#2492E8]/40 hover:bg-[#0E1C31] md:inline-flex"
-            >
-              <LayoutGrid size={15} className="text-[#2492E8]" />
-              Workspace
-            </Link>
-
-            <Link
-              href="/projects/new"
-              className="inline-flex min-h-12 items-center gap-3 rounded-[13px] bg-[#FF6B1A] px-5 text-[10px] font-bold text-white shadow-[0_12px_34px_rgba(255,107,26,.3)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
-            >
-              Nuovo progetto
-              <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-
-        <nav className="grid grid-cols-5 border-t border-white/[0.08] lg:hidden">
-          {navItems.map(([label, href]) => (
-            <a
-              key={label}
-              href={href}
-              className="flex min-h-11 items-center justify-center border-r border-white/[0.06] px-1 text-center text-[7px] font-bold uppercase tracking-[0.08em] text-white last:border-0"
-            >
-              {label}
-            </a>
-          ))}
-        </nav>
-      </div>
-    </header>
   );
 }
 
