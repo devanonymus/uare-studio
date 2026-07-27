@@ -440,86 +440,34 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section
-        id="pricing"
-        className="relative z-10 mx-auto max-w-[1600px] scroll-mt-32 px-5 py-20 md:px-10"
-      >
-        <SectionHeading
-          eyebrow="Pricing"
-          title="Un reparto marketing adatto alla tua crescita."
-          description="Configurazioni indicative per aziende con necessità e livelli di operatività differenti."
-        />
+      <section className="relative z-10 mx-auto max-w-[1600px] px-5 py-20 md:px-10">
+        <div className="grid gap-6 rounded-[24px] border border-white/[0.1] bg-[#0B1628] p-7 md:grid-cols-[1fr_auto] md:items-center md:p-10">
+          <div>
+            <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#2492E8]">
+              Pricing UVIQ
+            </p>
 
-        <div className="mt-12 grid gap-5 xl:grid-cols-3">
-          {pricing.map((plan) => (
-            <article
-              key={plan.name}
-              className={`relative rounded-[22px] border p-7 md:p-8 ${
-                plan.featured
-                  ? "border-[#FF6B1A]/50 bg-[#13233A] shadow-[0_24px_70px_rgba(255,107,26,.13)]"
-                  : "border-white/[0.09] bg-[#0B1628]"
-              }`}
-            >
-              {plan.featured && (
-                <span className="absolute right-5 top-5 rounded-full bg-[#FF6B1A] px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white">
-                  Consigliato
-                </span>
-              )}
+            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] md:text-5xl">
+              Scopri il piano adatto alla tua azienda.
+            </h2>
 
-              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#69BDF2]">
-                {plan.name}
-              </p>
+            <p className="mt-5 max-w-3xl text-sm leading-7 text-[#C0CDDD]">
+              Confronta Starter, Growth e Scale, verifica le funzioni
+              incluse e configura il reparto marketing più adatto.
+            </p>
+          </div>
 
-              <div className="mt-6 flex items-end gap-2">
-                <span className="text-5xl font-semibold tracking-[-0.055em]">
-                  {plan.price}
-                </span>
-
-                {plan.suffix && (
-                  <span className="pb-1 text-sm text-[#B6C4D6]">
-                    {plan.suffix}
-                  </span>
-                )}
-              </div>
-
-              <p className="mt-5 min-h-[84px] text-sm leading-7 text-[#B6C4D6]">
-                {plan.description}
-              </p>
-
-              <div className="mt-7 space-y-3 border-t border-white/[0.08] pt-7">
-                {plan.features.map((feature) => (
-                  <div
-                    key={feature}
-                    className="flex items-start gap-3 text-sm text-[#D4DEEA]"
-                  >
-                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-[#24D27C]/10 text-[#8AF0BA]">
-                      <Check size={12} />
-                    </span>
-
-                    {feature}
-                  </div>
-                ))}
-              </div>
-
-              <Link
-                href="/projects/new"
-                className={`mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-[13px] text-xs font-bold transition ${
-                  plan.featured
-                    ? "bg-[#FF6B1A] text-white hover:bg-[#FF7D34]"
-                    : "border border-white/[0.12] bg-white/[0.04] text-white hover:bg-white/[0.08]"
-                }`}
-              >
-                Richiedi configurazione
-                <ArrowRight size={14} />
-              </Link>
-            </article>
-          ))}
+          <Link
+            href="/pricing"
+            className="group inline-flex min-h-14 items-center justify-center gap-4 rounded-[14px] bg-[#FF6B1A] px-7 text-xs font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
+          >
+            Consulta il pricing
+            <ArrowRight
+              size={16}
+              className="transition group-hover:translate-x-1"
+            />
+          </Link>
         </div>
-
-        <p className="mt-5 text-center text-[10px] leading-5 text-[#8192A8]">
-          Prezzi indicativi. Configurazione, volume di contenuti,
-          integrazioni e automazioni vengono definiti in base al progetto.
-        </p>
       </section>
 
       <section className="relative z-10 mx-auto max-w-[1600px] px-5 pb-20 pt-10 md:px-10">

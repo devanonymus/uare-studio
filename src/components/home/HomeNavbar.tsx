@@ -29,10 +29,7 @@ const navItems = [
     label: "Reparto AI",
     id: "department",
   },
-  {
-    label: "Pricing",
-    id: "pricing",
-  },
+
 ];
 
 export function HomeNavbar() {
@@ -381,6 +378,12 @@ export function HomeNavbar() {
                 </button>
               );
             })}
+            <Link
+              href="/pricing"
+              className="relative flex min-h-12 items-center px-1 text-[10px] font-bold text-[#D3DCE8] transition hover:text-[#FF8A4A]"
+            >
+              Pricing
+            </Link>
           </nav>
 
           <div className="flex items-center gap-3">
@@ -433,6 +436,13 @@ export function HomeNavbar() {
               </button>
             );
           })}
+
+          <Link
+            href="/pricing"
+            className="relative flex min-h-11 items-center justify-center border-l border-white/[0.06] px-1 text-center text-[7px] font-bold uppercase tracking-[0.08em] text-[#D3DCE8]"
+          >
+            Pricing
+          </Link>
         </nav>
       </div>
     </header>
