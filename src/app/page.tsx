@@ -486,66 +486,107 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative z-10 mx-auto max-w-[1600px] px-5 py-20 md:px-10">
-        <div className="grid gap-6 rounded-[24px] border border-white/[0.1] bg-[#0B1628] p-7 md:grid-cols-[1fr_auto] md:items-center md:p-10">
-          <div>
-            <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#2492E8]">
-              Pricing UVIQ
-            </p>
-
-            <h2 className="mt-4 text-4xl font-semibold tracking-[-0.05em] md:text-5xl">
-              Scopri il piano adatto alla tua azienda.
-            </h2>
-
-            <p className="mt-5 max-w-3xl text-sm leading-7 text-[#C0CDDD]">
-              Confronta Starter, Growth e Scale, verifica le funzioni
-              incluse e configura il reparto marketing più adatto.
-            </p>
-          </div>
-
-          <Link
-            href="/pricing"
-            className="group inline-flex min-h-14 items-center justify-center gap-4 rounded-[14px] bg-[#FF6B1A] px-7 text-xs font-bold text-white transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
-          >
-            Consulta il pricing
-            <ArrowRight
-              size={16}
-              className="transition group-hover:translate-x-1"
-            />
-          </Link>
-        </div>
-      </section>
-
       <section className="relative z-10 mx-auto max-w-[1600px] px-5 pb-20 pt-10 md:px-10">
-        <div className="relative overflow-hidden rounded-[24px] border border-white/[0.1] bg-[#162D4F] px-7 py-12 md:px-12 md:py-16">
-          <div className="pointer-events-none absolute -right-40 -top-52 size-[32rem] rounded-full bg-[#FF6B1A]/20 blur-[120px]" />
+        <div className="relative overflow-hidden rounded-[28px] border border-white/[0.1] bg-[#0B1628] shadow-[0_36px_100px_rgba(0,0,0,.32)]">
+          <div className="pointer-events-none absolute -right-48 -top-56 size-[34rem] rounded-full bg-[#FF6B1A]/14 blur-[135px]" />
+          <div className="pointer-events-none absolute -bottom-56 left-1/4 size-[32rem] rounded-full bg-[#2492E8]/12 blur-[140px]" />
 
-          <div className="relative flex flex-col justify-between gap-10 xl:flex-row xl:items-end">
+          <div className="relative grid gap-10 border-b border-white/[0.08] px-7 py-10 md:px-10 md:py-12 xl:grid-cols-[0.9fr_1.1fr] xl:items-center">
             <div>
-              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#69BDF2]">
-                Deploy UVIQ
-              </p>
+              <div className="inline-flex items-center gap-2 rounded-full border border-[#2492E8]/20 bg-[#2492E8]/[0.07] px-3.5 py-2">
+                <Sparkles size={13} className="text-[#79C6F5]" />
 
-              <h2 className="mt-5 max-w-5xl text-4xl font-semibold leading-[1.02] tracking-[-0.038em] md:text-6xl">
-                Porta nella tua azienda un reparto marketing sempre operativo.
+                <span className="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#79C6F5]">
+                  Pricing UVIQ
+                </span>
+              </div>
+
+              <h2 className="mt-6 max-w-3xl text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-white md:text-6xl">
+                Scegli il livello operativo
+                <span className="block text-[#FF6B1A]">
+                  adatto alla tua crescita.
+                </span>
               </h2>
 
-              <p className="mt-6 max-w-2xl text-sm leading-7 text-[#C5D2E1]">
-                Parti dall’analisi e configura strategia, contenuti,
-                automazioni e sviluppo commerciale.
+              <p className="mt-6 max-w-2xl text-sm leading-7 text-[#C3CFDD]">
+                Parti dall’analisi e attiva soltanto gli strumenti,
+                gli agenti e le automazioni realmente utili alla tua azienda.
+              </p>
+
+              <div className="mt-7 flex flex-wrap gap-3">
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.035] px-3.5 py-2 text-[9px] font-medium text-[#D7E1EC]">
+                  <CheckCircle2 size={13} className="text-[#24D27C]" />
+                  Configurazione personalizzata
+                </span>
+
+                <span className="inline-flex items-center gap-2 rounded-full border border-white/[0.08] bg-white/[0.035] px-3.5 py-2 text-[9px] font-medium text-[#D7E1EC]">
+                  <ShieldCheck size={13} className="text-[#2492E8]" />
+                  Supervisione professionale
+                </span>
+              </div>
+            </div>
+
+            <div className="grid gap-3 md:grid-cols-3">
+              <PricingPreview
+                name="Starter"
+                price="490 €"
+                suffix="/mese"
+                description="Per organizzare marketing e contenuti."
+              />
+
+              <PricingPreview
+                name="Growth"
+                price="990 €"
+                suffix="/mese"
+                description="Per un reparto marketing operativo."
+                featured
+              />
+
+              <PricingPreview
+                name="Scale"
+                price="Su misura"
+                suffix=""
+                description="Per aziende strutturate e multisede."
+              />
+            </div>
+          </div>
+
+          <div className="relative flex flex-col justify-between gap-8 px-7 py-8 md:px-10 md:py-9 xl:flex-row xl:items-center">
+            <div>
+              <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#79C6F5]">
+                Configurazione guidata
+              </p>
+
+              <h3 className="mt-3 text-2xl font-semibold tracking-[-0.03em] text-white md:text-3xl">
+                Scopri quale reparto serve davvero alla tua azienda.
+              </h3>
+
+              <p className="mt-3 max-w-3xl text-sm leading-7 text-[#B9C7D8]">
+                Settore, obiettivi, contenuti, CRM e automazioni vengono
+                configurati in base alla tua situazione reale.
               </p>
             </div>
 
-            <Link
-              href="/projects/new"
-              className="group inline-flex min-h-14 shrink-0 items-center justify-center gap-4 rounded-[14px] bg-[#FF6B1A] px-7 text-xs font-bold text-white shadow-[0_18px_45px_rgba(0,0,0,.25)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
-            >
-              Avvia il progetto
-              <ArrowRight
-                size={16}
-                className="transition group-hover:translate-x-1"
-              />
-            </Link>
+            <div className="flex flex-col gap-3 sm:flex-row">
+              <Link
+                href="/pricing"
+                className="inline-flex min-h-13 items-center justify-center gap-3 rounded-[13px] border border-white/[0.12] bg-white/[0.04] px-6 text-xs font-semibold text-white transition hover:border-[#2492E8]/40 hover:bg-white/[0.07]"
+              >
+                Confronta i piani
+                <ArrowRight size={15} />
+              </Link>
+
+              <Link
+                href="/projects/new"
+                className="group inline-flex min-h-13 items-center justify-center gap-3 rounded-[13px] bg-[#FF6B1A] px-6 text-xs font-semibold text-white shadow-[0_16px_40px_rgba(255,107,26,.25)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
+              >
+                Configura UVIQ
+                <ArrowRight
+                  size={15}
+                  className="transition group-hover:translate-x-1"
+                />
+              </Link>
+            </div>
           </div>
         </div>
       </section>
@@ -578,6 +619,71 @@ export default function HomePage() {
         </div>
       </footer>
     </main>
+  );
+}
+
+
+function PricingPreview({
+  name,
+  price,
+  suffix,
+  description,
+  featured = false,
+}: {
+  name: string;
+  price: string;
+  suffix: string;
+  description: string;
+  featured?: boolean;
+}) {
+  return (
+    <article
+      className={`relative min-h-[230px] rounded-[18px] border p-5 ${
+        featured
+          ? "border-[#FF6B1A]/50 bg-[#16243A] shadow-[0_18px_45px_rgba(255,107,26,.12)]"
+          : "border-white/[0.08] bg-[#07111F]/55"
+      }`}
+    >
+      {featured && (
+        <span className="absolute right-4 top-4 rounded-full bg-[#FF6B1A] px-2.5 py-1 text-[7px] font-semibold uppercase tracking-[0.12em] text-white">
+          Consigliato
+        </span>
+      )}
+
+      <p
+        className={`text-[8px] font-semibold uppercase tracking-[0.15em] ${
+          featured ? "text-[#FF8A4A]" : "text-[#79C6F5]"
+        }`}
+      >
+        {name}
+      </p>
+
+      <div className="mt-7 flex items-end gap-1.5">
+        <span className="text-3xl font-semibold tracking-[-0.04em] text-white">
+          {price}
+        </span>
+
+        {suffix && (
+          <span className="pb-1 text-[9px] text-[#AAB9CC]">
+            {suffix}
+          </span>
+        )}
+      </div>
+
+      <p className="mt-5 text-[10px] leading-5 text-[#B9C7D8]">
+        {description}
+      </p>
+
+      <div className="mt-6 h-1 overflow-hidden rounded-full bg-white/[0.06]">
+        <div
+          className={`h-full rounded-full ${
+            featured
+              ? "w-[82%] bg-[#FF6B1A]"
+              : "w-[58%] bg-[#2492E8]"
+          }`}
+        />
+      </div>
+    </article>
   );
 }
 
