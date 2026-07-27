@@ -1,405 +1,401 @@
 import Link from "next/link";
 import {
+  Activity,
   ArrowRight,
   ArrowUpRight,
   BarChart3,
+  Bot,
   BrainCircuit,
   BriefcaseBusiness,
-  CalendarDays,
-  ChevronRight,
+  CheckCircle2,
   CircleDot,
+  Clock3,
   FileText,
   Globe2,
+  Megaphone,
+  MessageSquareText,
   Plus,
+  Search,
   Sparkles,
   Target,
-  WandSparkles,
-  Zap,
+  TrendingUp,
+  Users,
+  Video,
+  Workflow,
 } from "lucide-react";
 import { AppSidebar } from "@/components/dashboard/AppSidebar";
-import { GlobalCommand } from "@/components/navigation/GlobalCommand";
-import {
-  dashboardMetrics,
-  demoRestaurants,
-} from "@/data/demo-restaurants";
 
-function euro(value: number): string {
-  return new Intl.NumberFormat("it-IT", {
-    style: "currency",
-    currency: "EUR",
-    maximumFractionDigits: 0,
-  }).format(value);
-}
+const agents = [
+  {
+    name: "Marketing Director",
+    role: "Strategia e coordinamento",
+    task: "Roadmap Q3 in elaborazione",
+    status: "Working",
+    progress: 82,
+    icon: BrainCircuit,
+  },
+  {
+    name: "SEO Specialist",
+    role: "Search intelligence",
+    task: "Analisi di 83 keyword",
+    status: "Working",
+    progress: 67,
+    icon: Search,
+  },
+  {
+    name: "Content Strategist",
+    role: "Piano editoriale",
+    task: "12 contenuti programmati",
+    status: "Working",
+    progress: 74,
+    icon: Megaphone,
+  },
+  {
+    name: "Video Producer",
+    role: "Reel e short video",
+    task: "Montaggio di 4 contenuti",
+    status: "Working",
+    progress: 58,
+    icon: Video,
+  },
+  {
+    name: "Automation Architect",
+    role: "Workflow e CRM",
+    task: "6 automazioni attive",
+    status: "Running",
+    progress: 91,
+    icon: Workflow,
+  },
+  {
+    name: "Data Analyst",
+    role: "KPI e performance",
+    task: "Monitoraggio campagne",
+    status: "Online",
+    progress: 100,
+    icon: BarChart3,
+  },
+];
 
-function scoreStyle(score: number): string {
-  if (score < 50) {
-    return "from-rose-500 to-orange-400";
-  }
+const events = [
+  {
+    time: "09:44",
+    agent: "Automation Architect",
+    action: "ha attivato il follow-up automatico dei nuovi lead.",
+    type: "automation",
+  },
+  {
+    time: "09:39",
+    agent: "Content Strategist",
+    action: "ha completato il piano editoriale delle prossime due settimane.",
+    type: "content",
+  },
+  {
+    time: "09:31",
+    agent: "SEO Specialist",
+    action: "ha individuato 17 opportunità ad alta intenzione commerciale.",
+    type: "seo",
+  },
+  {
+    time: "09:22",
+    agent: "Marketing Director",
+    action: "ha aggiornato le priorità del progetto Studio Medico Aurora.",
+    type: "strategy",
+  },
+];
 
-  if (score < 70) {
-    return "from-amber-400 to-yellow-300";
-  }
+const twinAreas = [
+  { label: "Brand", score: 78 },
+  { label: "SEO", score: 54 },
+  { label: "Social", score: 69 },
+  { label: "Advertising", score: 43 },
+  { label: "CRM", score: 36 },
+  { label: "Automation", score: 24 },
+];
 
-  return "from-emerald-400 to-cyan-400";
-}
+const monitoredProjects = [
+  {
+    name: "Studio Medico Aurora",
+    sector: "Sanità e benessere",
+    status: "Strategy",
+    score: 64,
+  },
+  {
+    name: "Sakura Restaurant Lab",
+    sector: "Ristorazione",
+    status: "Research",
+    score: 48,
+  },
+  {
+    name: "Northwave Fitness",
+    sector: "Fitness",
+    status: "Content",
+    score: 72,
+  },
+];
 
 export default function DashboardPage() {
-  const priorityProject = demoRestaurants[0];
-  const recentProjects = demoRestaurants.slice(1, 5);
-
   return (
-    <main className="workspace-page min-h-screen">
+    <main className="min-h-screen bg-[#07111F] text-[#F7FAFC]">
       <AppSidebar />
 
-      <section className="relative px-4 pb-28 pt-6 lg:ml-[112px] lg:px-8 xl:px-12">
-        <div className="pointer-events-none absolute right-0 top-0 size-[42rem] rounded-full bg-violet-500/[0.08] blur-[150px]" />
-        <div className="pointer-events-none absolute bottom-0 left-1/4 size-[32rem] rounded-full bg-cyan-500/[0.05] blur-[140px]" />
+      <section className="relative overflow-hidden px-5 pb-28 pt-6 lg:ml-[112px] lg:px-8 xl:px-12">
+        <div className="pointer-events-none absolute -right-48 -top-52 size-[42rem] rounded-full bg-[#FF6B1A]/[0.07] blur-[150px]" />
+        <div className="pointer-events-none absolute -left-44 top-1/3 size-[34rem] rounded-full bg-[#2492E8]/[0.06] blur-[145px]" />
+        <div className="pointer-events-none absolute bottom-0 right-1/3 size-[30rem] rounded-full bg-[#6D4FD2]/[0.05] blur-[150px]" />
 
-        <div className="relative mx-auto max-w-[1540px]">
-          <header className="flex flex-col justify-between gap-7 xl:flex-row xl:items-end">
+        <div className="relative mx-auto max-w-[1580px]">
+          <header className="flex flex-col gap-8 border-b border-white/[0.07] pb-7 xl:flex-row xl:items-end xl:justify-between">
             <div>
-              <div className="flex flex-wrap items-center gap-3">
-                <span className="inline-flex items-center gap-2 rounded-full border border-emerald-300/15 bg-emerald-300/[0.05] px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.18em] text-emerald-200/75">
-                  <span className="size-1.5 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.8)]" />
-                  Intelligence online
-                </span>
+              <div className="flex items-center gap-4">
+                <div className="flex size-14 items-center justify-center rounded-[15px] border border-white/[0.08] bg-white/[0.03] p-2">
+                  <img
+                    src="/uviq-logo.svg"
+                    alt="UVIQ"
+                    className="size-full object-contain"
+                  />
+                </div>
 
-                <span className="rounded-full border border-white/[0.07] bg-white/[0.025] px-3 py-1.5 text-[8px] uppercase tracking-[0.16em] text-white/30">
-                  Workspace dimostrativo
-                </span>
+                <div>
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.2em] text-[#2492E8]">
+                    UVIQ Mission Control
+                  </p>
+
+                  <div className="mt-1 flex items-center gap-2 text-[9px] text-[#91A4BF]">
+                    <span className="size-1.5 rounded-full bg-[#24D27C] shadow-[0_0_12px_rgba(36,210,124,.75)]" />
+                    AI Business Operating System online
+                  </div>
+                </div>
               </div>
 
-              <h1 className="mt-6 text-4xl font-semibold tracking-[-0.055em] text-white md:text-6xl">
-                Buonasera, Brian.
+              <h1 className="mt-7 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.052em] md:text-6xl xl:text-7xl">
+                Il tuo reparto marketing
+                <span className="block text-[#FF6B1A]">
+                  è già al lavoro.
+                </span>
               </h1>
 
-              <p className="mt-4 max-w-2xl text-sm leading-7 text-slate-400">
-                Il tuo centro operativo per analisi, strategie, demo e
-                opportunità commerciali.
+              <p className="mt-5 max-w-3xl text-sm leading-7 text-[#91A4BF] md:text-base">
+                UVIQ coordina strategia, contenuti, ricerca, CRM,
+                automazioni e performance in un unico centro operativo.
               </p>
             </div>
 
             <div className="flex flex-col gap-3 sm:flex-row">
-              <GlobalCommand />
-
               <Link
                 href="/projects/new"
-                className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-blue-500 via-violet-500 to-fuchsia-500 px-6 py-3.5 text-xs font-semibold text-white shadow-[0_20px_60px_rgba(105,85,255,0.3)] transition hover:-translate-y-0.5 hover:shadow-[0_25px_75px_rgba(105,85,255,0.42)]"
+                className="group inline-flex min-h-12 items-center justify-center gap-3 rounded-[12px] bg-[#FF6B1A] px-6 text-xs font-semibold text-white shadow-[0_14px_38px_rgba(255,107,26,.22)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
               >
                 <Plus size={16} />
-                Nuovo progetto
+                Avvia intelligence
                 <ArrowUpRight
                   size={15}
                   className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
                 />
               </Link>
+
+              <Link
+                href="/audits"
+                className="inline-flex min-h-12 items-center justify-center gap-3 rounded-[12px] border border-white/[0.09] bg-white/[0.03] px-6 text-xs font-semibold text-[#D7E1EC] transition hover:border-white/[0.16] hover:bg-white/[0.055]"
+              >
+                <BriefcaseBusiness size={15} />
+                Apri workspace
+              </Link>
             </div>
           </header>
 
-          <section className="mt-9 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <Metric
-              label="Pipeline commerciale"
-              value={euro(dashboardMetrics.opportunityValue)}
-              detail="Valore opportunità attive"
-              icon={BarChart3}
-              gradient="from-cyan-400 to-blue-500"
+          <section className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <TopMetric
+              label="Agenti AI online"
+              value="12"
+              detail="8 operativi · 4 in monitoraggio"
+              icon={Bot}
+              accent="#2492E8"
             />
 
-            <Metric
-              label="Progetti attivi"
-              value={String(dashboardMetrics.activeProjects)}
-              detail="Analisi e proposte aperte"
+            <TopMetric
+              label="Aziende monitorate"
+              value="18"
+              detail="3 richiedono attenzione"
               icon={BriefcaseBusiness}
-              gradient="from-blue-500 to-violet-500"
+              accent="#6D4FD2"
             />
 
-            <Metric
-              label="Report disponibili"
-              value={String(dashboardMetrics.generatedReports)}
-              detail="Documenti già generati"
-              icon={FileText}
-              gradient="from-violet-500 to-fuchsia-500"
-            />
-
-            <Metric
-              label="Digital score medio"
-              value={`${dashboardMetrics.averageScore}/100`}
-              detail="Media dei progetti analizzati"
+            <TopMetric
+              label="Opportunità attive"
+              value="27"
+              detail="+9 rilevate questa settimana"
               icon={Target}
-              gradient="from-fuchsia-500 to-pink-500"
+              accent="#FF6B1A"
+            />
+
+            <TopMetric
+              label="Crescita stimata"
+              value="€ 42.600"
+              detail="Valore potenziale pipeline"
+              icon={TrendingUp}
+              accent="#24D27C"
             />
           </section>
 
-          <section className="mt-6 grid gap-6 xl:grid-cols-[1.38fr_0.62fr]">
-            <article className="workspace-panel relative overflow-hidden rounded-[30px] p-6 md:p-8">
-              <div className="absolute -right-28 -top-28 size-80 rounded-full bg-violet-500/[0.09] blur-3xl" />
-              <div className="absolute -bottom-36 left-1/4 size-80 rounded-full bg-cyan-500/[0.05] blur-3xl" />
+          <section className="mt-6 grid gap-6 xl:grid-cols-[1.18fr_0.82fr]">
+            <article className="relative overflow-hidden rounded-[20px] border border-white/[0.075] bg-[#0B1628] p-6 md:p-8">
+              <div className="pointer-events-none absolute right-0 top-0 size-72 rounded-full bg-[#FF6B1A]/[0.055] blur-[90px]" />
 
               <div className="relative">
-                <div className="flex flex-col justify-between gap-7 md:flex-row md:items-start">
-                  <div>
-                    <div className="flex flex-wrap items-center gap-3">
-                      <span className="rounded-full border border-violet-300/20 bg-violet-300/[0.07] px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.17em] text-violet-200">
-                        Progetto prioritario
-                      </span>
+                <div className="flex flex-col justify-between gap-6 md:flex-row md:items-start">
+                  <div className="flex items-start gap-4">
+                    <span className="flex size-12 shrink-0 items-center justify-center rounded-[14px] border border-[#2492E8]/20 bg-[#2492E8]/10 text-[#69BDF2]">
+                      <BrainCircuit size={21} />
+                    </span>
 
-                      <span className="text-[8px] uppercase tracking-[0.18em] text-white/25">
-                        {priorityProject.projectCode}
-                      </span>
+                    <div>
+                      <div className="flex flex-wrap items-center gap-3">
+                        <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
+                          CEO AI
+                        </p>
+
+                        <span className="inline-flex items-center gap-1.5 rounded-full border border-[#24D27C]/15 bg-[#24D27C]/[0.055] px-2.5 py-1 text-[7px] font-semibold uppercase tracking-[0.12em] text-[#66E7A6]">
+                          <span className="size-1.5 rounded-full bg-[#24D27C]" />
+                          Online
+                        </span>
+                      </div>
+
+                      <h2 className="mt-3 text-2xl font-semibold tracking-[-0.035em]">
+                        Buongiorno, Brian.
+                      </h2>
                     </div>
-
-                    <h2 className="mt-6 text-4xl font-semibold tracking-[-0.05em] text-white md:text-5xl">
-                      {priorityProject.name}
-                    </h2>
-
-                    <p className="mt-3 text-sm text-slate-400">
-                      {priorityProject.category} · {priorityProject.city}
-                    </p>
                   </div>
 
-                  <ScoreRing score={priorityProject.score} />
+                  <span className="text-[9px] text-[#607089]">
+                    Aggiornato ora
+                  </span>
                 </div>
 
-                <div className="mt-9 grid gap-3 md:grid-cols-3">
-                  <ProjectDatum
-                    label="Stato"
-                    value={priorityProject.status}
-                    icon={CircleDot}
-                  />
+                <div className="mt-8 rounded-[16px] border border-white/[0.065] bg-[#07111F]/60 p-5 md:p-6">
+                  <p className="text-sm leading-7 text-[#D7E1EC]">
+                    Ho completato il monitoraggio dei progetti attivi.
+                    La priorità principale è{" "}
+                    <strong className="font-semibold text-white">
+                      Studio Medico Aurora
+                    </strong>
+                    : il maggiore potenziale si trova in CRM,
+                    automazioni WhatsApp e campagne Meta orientate
+                    alla prenotazione.
+                  </p>
 
-                  <ProjectDatum
-                    label="Priorità"
-                    value={priorityProject.primaryNeed}
-                    icon={Target}
-                  />
+                  <div className="mt-6 grid gap-3 md:grid-cols-3">
+                    <Insight
+                      label="Priorità"
+                      value="Automation"
+                      icon={Workflow}
+                    />
 
-                  <ProjectDatum
-                    label="Valore progetto"
-                    value={euro(priorityProject.opportunityValue)}
-                    icon={BarChart3}
-                  />
-                </div>
+                    <Insight
+                      label="Opportunità"
+                      value="€ 8.400"
+                      icon={TrendingUp}
+                    />
 
-                <div className="mt-8 rounded-[22px] border border-white/[0.06] bg-black/10 p-5">
-                  <div className="flex items-center justify-between text-[9px] uppercase tracking-[0.16em]">
-                    <span className="text-white/30">
-                      Avanzamento intelligence
-                    </span>
-
-                    <span className="text-cyan-300">
-                      {priorityProject.progress}%
-                    </span>
-                  </div>
-
-                  <div className="mt-4 h-2 overflow-hidden rounded-full bg-white/[0.05]">
-                    <div
-                      className="h-full rounded-full bg-gradient-to-r from-cyan-400 via-blue-500 to-violet-500 shadow-[0_0_20px_rgba(79,124,255,0.45)]"
-                      style={{
-                        width: `${priorityProject.progress}%`,
-                      }}
+                    <Insight
+                      label="Confidence"
+                      value="91%"
+                      icon={CheckCircle2}
                     />
                   </div>
                 </div>
 
-                <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-6 flex flex-col gap-3 sm:flex-row">
                   <Link
-                    href="/audits/analysis"
-                    className="group inline-flex items-center justify-center gap-3 rounded-2xl bg-gradient-to-r from-blue-500 via-violet-500 to-fuchsia-500 px-6 py-3.5 text-xs font-semibold text-white"
+                    href="/growth-plan"
+                    className="group inline-flex items-center justify-center gap-3 rounded-[12px] bg-[#FF6B1A] px-5 py-3.5 text-xs font-semibold text-white transition hover:bg-[#FF7D34]"
                   >
-                    Apri intelligence
+                    Crea piano operativo
                     <ArrowRight
                       size={15}
                       className="transition group-hover:translate-x-1"
                     />
                   </Link>
 
-                  <SecondaryAction
+                  <Link
                     href="/demo-generator"
-                    icon={Globe2}
-                    label="Apri demo"
-                  />
+                    className="inline-flex items-center justify-center gap-3 rounded-[12px] border border-white/[0.08] bg-white/[0.025] px-5 py-3.5 text-xs text-[#D7E1EC] transition hover:bg-white/[0.05]"
+                  >
+                    <Sparkles size={15} />
+                    Genera demo
+                  </Link>
 
-                  <SecondaryAction
-                    href="/growth-plan"
-                    icon={Target}
-                    label="Crea proposta"
-                  />
+                  <Link
+                    href="/audits/analysis"
+                    className="inline-flex items-center justify-center gap-3 rounded-[12px] border border-white/[0.08] bg-white/[0.025] px-5 py-3.5 text-xs text-[#D7E1EC] transition hover:bg-white/[0.05]"
+                  >
+                    <Activity size={15} />
+                    Apri Business Twin
+                  </Link>
                 </div>
               </div>
             </article>
 
-            <aside className="workspace-panel rounded-[30px] p-6">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[8px] font-semibold uppercase tracking-[0.2em] text-cyan-300/70">
-                    AI Command
-                  </p>
-
-                  <h2 className="mt-2 text-2xl font-semibold tracking-[-0.035em]">
-                    Azioni rapide
-                  </h2>
-                </div>
-
-                <span className="flex size-11 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-fuchsia-500/20 text-violet-200">
-                  <Sparkles size={18} />
-                </span>
-              </div>
-
-              <div className="mt-7 space-y-3">
-                <QuickAction
-                  href="/projects/new"
-                  title="Nuova intelligence"
-                  detail="Avvia discovery e analisi"
-                  icon={Plus}
-                  gradient="from-cyan-400 to-blue-500"
-                />
-
-                <QuickAction
-                  href="/reports"
-                  title="Consulta report"
-                  detail="Apri documenti generati"
-                  icon={FileText}
-                  gradient="from-blue-500 to-violet-500"
-                />
-
-                <QuickAction
-                  href="/demo-generator"
-                  title="Genera una demo"
-                  detail="Crea esperienza personalizzata"
-                  icon={WandSparkles}
-                  gradient="from-violet-500 to-fuchsia-500"
-                />
-
-                <QuickAction
-                  href="/growth-plan"
-                  title="Configura strategia"
-                  detail="Servizi, roadmap e investimento"
-                  icon={Target}
-                  gradient="from-fuchsia-500 to-pink-500"
-                />
-              </div>
-
-              <div className="mt-7 rounded-[24px] border border-cyan-300/10 bg-gradient-to-br from-cyan-400/[0.055] via-blue-500/[0.035] to-violet-500/[0.05] p-5">
-                <div className="flex items-center gap-3">
-                  <CalendarDays size={17} className="text-cyan-300" />
-
-                  <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-cyan-200/70">
-                    Prossima attività
-                  </p>
-                </div>
-
-                <p className="mt-4 text-sm font-medium text-white/80">
-                  Presentazione concept
-                </p>
-
-                <p className="mt-2 text-xs leading-5 text-slate-500">
-                  Completa il report e prepara la proposta commerciale.
-                </p>
-              </div>
-            </aside>
+            <BusinessTwin />
           </section>
 
-          <section className="mt-6 grid gap-6 xl:grid-cols-[1.25fr_0.75fr]">
-            <article className="workspace-panel rounded-[30px] p-6 md:p-8">
-              <div className="flex flex-col justify-between gap-4 border-b border-white/[0.06] pb-6 md:flex-row md:items-end">
-                <div>
-                  <p className="text-[8px] uppercase tracking-[0.22em] text-white/30">
-                    Attività recente
-                  </p>
+          <section className="mt-6 grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
+            <Timeline />
+            <AIDepartment />
+          </section>
 
-                  <h2 className="mt-2 text-2xl font-semibold tracking-[-0.04em] md:text-3xl">
-                    Progetti in lavorazione
-                  </h2>
-                </div>
+          <section className="mt-6 rounded-[20px] border border-white/[0.075] bg-[#0B1628]">
+            <div className="flex flex-col justify-between gap-4 border-b border-white/[0.07] px-6 py-5 md:flex-row md:items-end">
+              <div>
+                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
+                  Workspace monitorato
+                </p>
 
+                <h2 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
+                  Progetti che richiedono una decisione
+                </h2>
+              </div>
+
+              <Link
+                href="/audits"
+                className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#FF8A4A] transition hover:text-white"
+              >
+                Tutti i progetti
+                <ArrowRight size={13} />
+              </Link>
+            </div>
+
+            <div className="divide-y divide-white/[0.06] px-6">
+              {monitoredProjects.map((project) => (
                 <Link
-                  href="/audits"
-                  className="inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.16em] text-cyan-300 transition hover:text-white"
+                  key={project.name}
+                  href="/audits/analysis"
+                  className="group grid gap-4 py-5 transition hover:translate-x-1 md:grid-cols-[1.2fr_0.7fr_0.45fr_auto] md:items-center"
                 >
-                  Tutti i progetti
-                  <ArrowRight size={13} />
+                  <div>
+                    <p className="text-sm font-semibold text-[#F7FAFC]">
+                      {project.name}
+                    </p>
+
+                    <p className="mt-1 text-[9px] text-[#607089]">
+                      {project.sector}
+                    </p>
+                  </div>
+
+                  <span className="text-[10px] text-[#91A4BF]">
+                    {project.status}
+                  </span>
+
+                  <span className="inline-flex w-fit rounded-full border border-[#2492E8]/18 bg-[#2492E8]/[0.07] px-3 py-1.5 text-[8px] font-semibold text-[#69BDF2]">
+                    Score {project.score}
+                  </span>
+
+                  <ArrowRight
+                    size={14}
+                    className="text-[#607089] transition group-hover:text-[#FF8A4A]"
+                  />
                 </Link>
-              </div>
-
-              <div className="mt-3 divide-y divide-white/[0.05]">
-                {recentProjects.map((project) => (
-                  <Link
-                    key={project.id}
-                    href="/audits/analysis"
-                    className="group grid gap-4 py-5 transition hover:translate-x-1 md:grid-cols-[1.2fr_0.65fr_0.45fr_auto] md:items-center"
-                  >
-                    <div>
-                      <p className="text-sm font-medium text-white/75">
-                        {project.name}
-                      </p>
-
-                      <p className="mt-1 text-[9px] text-slate-500">
-                        {project.category} · {project.city}
-                      </p>
-                    </div>
-
-                    <span className="text-[9px] text-slate-400">
-                      {project.status}
-                    </span>
-
-                    <span
-                      className={`inline-flex w-fit rounded-full bg-gradient-to-r ${scoreStyle(
-                        project.score,
-                      )} px-3 py-1.5 text-[8px] font-bold text-[#090b13]`}
-                    >
-                      {project.score}/100
-                    </span>
-
-                    <ChevronRight
-                      size={15}
-                      className="text-white/20 transition group-hover:text-white"
-                    />
-                  </Link>
-                ))}
-              </div>
-            </article>
-
-            <article className="workspace-panel rounded-[30px] p-6 md:p-8">
-              <div className="flex items-center justify-between">
-                <div>
-                  <p className="text-[8px] uppercase tracking-[0.22em] text-white/30">
-                    Agent network
-                  </p>
-
-                  <h2 className="mt-2 text-2xl font-semibold tracking-[-0.04em]">
-                    Stato sistema
-                  </h2>
-                </div>
-
-                <Zap size={18} className="text-cyan-300" />
-              </div>
-
-              <div className="mt-7 space-y-3">
-                <AgentStatus
-                  name="Research Agent"
-                  detail="Browser e raccolta evidenze"
-                  icon={Globe2}
-                />
-
-                <AgentStatus
-                  name="Vision Agent"
-                  detail="UX, UI e percezione"
-                  icon={Sparkles}
-                />
-
-                <AgentStatus
-                  name="Strategy Agent"
-                  detail="Diagnosi e opportunità"
-                  icon={BrainCircuit}
-                />
-
-                <AgentStatus
-                  name="Creative Agent"
-                  detail="Demo e trasformazione"
-                  icon={WandSparkles}
-                />
-              </div>
-            </article>
+              ))}
+            </div>
           </section>
         </div>
       </section>
@@ -407,174 +403,272 @@ export default function DashboardPage() {
   );
 }
 
-function Metric({
+function TopMetric({
   label,
   value,
   detail,
   icon: Icon,
-  gradient,
+  accent,
 }: {
   label: string;
   value: string;
   detail: string;
-  icon: typeof BarChart3;
-  gradient: string;
+  icon: typeof Bot;
+  accent: string;
 }) {
   return (
-    <article className="workspace-panel group relative overflow-hidden rounded-[26px] p-5">
-      <div
-        className={`absolute -right-12 -top-12 size-32 rounded-full bg-gradient-to-br ${gradient} opacity-[0.09] blur-3xl transition group-hover:opacity-[0.16]`}
-      />
+    <article className="rounded-[17px] border border-white/[0.07] bg-[#0B1628] p-5">
+      <div className="flex items-start justify-between gap-4">
+        <span
+          className="flex size-10 items-center justify-center rounded-[12px] border"
+          style={{
+            color: accent,
+            borderColor: `${accent}2F`,
+            backgroundColor: `${accent}12`,
+          }}
+        >
+          <Icon size={17} />
+        </span>
 
-      <span
-        className={`relative flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white shadow-lg`}
-      >
-        <Icon size={17} strokeWidth={1.6} />
-      </span>
+        <span className="inline-flex items-center gap-1.5 text-[8px] text-[#607089]">
+          <CircleDot size={10} />
+          Live
+        </span>
+      </div>
 
-      <p className="relative mt-6 text-[8px] uppercase tracking-[0.18em] text-slate-500">
+      <p className="mt-5 text-[8px] font-semibold uppercase tracking-[0.15em] text-[#607089]">
         {label}
       </p>
 
-      <p className="relative mt-2 text-3xl font-semibold tracking-[-0.05em] text-white">
+      <p className="mt-2 text-3xl font-semibold tracking-[-0.045em]">
         {value}
       </p>
 
-      <p className="relative mt-2 text-[9px] text-slate-500">
+      <p className="mt-2 text-[9px] text-[#91A4BF]">
         {detail}
       </p>
     </article>
   );
 }
 
-function ScoreRing({ score }: { score: number }) {
-  return (
-    <div className="relative flex size-24 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-cyan-400 via-blue-500 to-violet-500 p-[2px]">
-      <div className="flex size-full flex-col items-center justify-center rounded-full bg-[#101522]">
-        <span className="text-3xl font-semibold tracking-[-0.05em]">
-          {score}
-        </span>
-
-        <span className="mt-1 text-[7px] uppercase tracking-[0.16em] text-slate-500">
-          Score
-        </span>
-      </div>
-    </div>
-  );
-}
-
-function ProjectDatum({
+function Insight({
   label,
   value,
   icon: Icon,
 }: {
   label: string;
   value: string;
-  icon: typeof Target;
+  icon: typeof Workflow;
 }) {
   return (
-    <div className="rounded-[20px] border border-white/[0.06] bg-white/[0.025] p-4">
-      <Icon size={15} className="text-cyan-300" />
+    <div className="rounded-[13px] border border-white/[0.06] bg-[#0B1628] p-4">
+      <Icon size={14} className="text-[#2492E8]" />
 
-      <p className="mt-4 text-[7px] uppercase tracking-[0.17em] text-slate-500">
+      <p className="mt-3 text-[7px] font-semibold uppercase tracking-[0.13em] text-[#607089]">
         {label}
       </p>
 
-      <p className="mt-2 text-xs font-medium text-white/75">
+      <p className="mt-2 text-sm font-semibold">
         {value}
       </p>
     </div>
   );
 }
 
-function SecondaryAction({
-  href,
-  icon: Icon,
-  label,
-}: {
-  href: string;
-  icon: typeof Globe2;
-  label: string;
-}) {
+function BusinessTwin() {
   return (
-    <Link
-      href={href}
-      className="inline-flex items-center justify-center gap-3 rounded-2xl border border-white/[0.08] bg-white/[0.03] px-6 py-3.5 text-xs text-slate-400 transition hover:border-violet-300/20 hover:bg-white/[0.055] hover:text-white"
-    >
-      <Icon size={15} />
-      {label}
-    </Link>
-  );
-}
+    <article className="rounded-[20px] border border-white/[0.075] bg-[#0B1628] p-6">
+      <div className="flex items-center justify-between">
+        <div>
+          <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
+            Business Twin
+          </p>
 
-function QuickAction({
-  href,
-  title,
-  detail,
-  icon: Icon,
-  gradient,
-}: {
-  href: string;
-  title: string;
-  detail: string;
-  icon: typeof Plus;
-  gradient: string;
-}) {
-  return (
-    <Link
-      href={href}
-      className="group flex items-center gap-4 rounded-[20px] border border-white/[0.06] bg-white/[0.022] p-4 transition hover:border-violet-300/20 hover:bg-white/[0.045]"
-    >
-      <span
-        className={`flex size-10 shrink-0 items-center justify-center rounded-2xl bg-gradient-to-br ${gradient} text-white`}
+          <h2 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
+            Stato digitale
+          </h2>
+        </div>
+
+        <span className="flex size-11 items-center justify-center rounded-[13px] border border-[#6D4FD2]/20 bg-[#6D4FD2]/10 text-[#9B86EA]">
+          <Globe2 size={18} />
+        </span>
+      </div>
+
+      <div className="mt-7 space-y-5">
+        {twinAreas.map((area) => {
+          const color =
+            area.score < 40
+              ? "#FF6B1A"
+              : area.score < 65
+                ? "#2492E8"
+                : "#24D27C";
+
+          return (
+            <div key={area.label}>
+              <div className="flex items-center justify-between text-[10px]">
+                <span className="font-medium text-[#D7E1EC]">
+                  {area.label}
+                </span>
+
+                <span
+                  className="font-semibold"
+                  style={{ color }}
+                >
+                  {area.score}
+                </span>
+              </div>
+
+              <div className="mt-2 h-1.5 overflow-hidden rounded-full bg-white/[0.06]">
+                <div
+                  className="h-full rounded-full"
+                  style={{
+                    width: `${area.score}%`,
+                    backgroundColor: color,
+                  }}
+                />
+              </div>
+            </div>
+          );
+        })}
+      </div>
+
+      <Link
+        href="/audits/analysis"
+        className="mt-7 inline-flex items-center gap-2 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#FF8A4A]"
       >
-        <Icon size={16} />
-      </span>
-
-      <div className="min-w-0 flex-1">
-        <p className="text-xs font-medium text-white/70">
-          {title}
-        </p>
-
-        <p className="mt-1 text-[8px] text-slate-500">
-          {detail}
-        </p>
-      </div>
-
-      <ChevronRight
-        size={14}
-        className="text-white/20 transition group-hover:translate-x-1 group-hover:text-white"
-      />
-    </Link>
+        Apri Business Twin
+        <ArrowRight size={13} />
+      </Link>
+    </article>
   );
 }
 
-function AgentStatus({
-  name,
-  detail,
-  icon: Icon,
-}: {
-  name: string;
-  detail: string;
-  icon: typeof BrainCircuit;
-}) {
+function Timeline() {
   return (
-    <div className="flex items-center gap-4 rounded-[20px] border border-white/[0.06] bg-white/[0.022] p-4">
-      <span className="flex size-10 items-center justify-center rounded-2xl bg-gradient-to-br from-blue-500/20 via-violet-500/20 to-fuchsia-500/20 text-violet-200">
-        <Icon size={16} />
-      </span>
+    <article className="rounded-[20px] border border-white/[0.075] bg-[#0B1628]">
+      <div className="flex items-center justify-between border-b border-white/[0.07] px-6 py-5">
+        <div>
+          <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
+            Live timeline
+          </p>
 
-      <div className="min-w-0 flex-1">
-        <p className="text-xs font-medium text-white/70">
-          {name}
-        </p>
+          <h2 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
+            Attività del reparto
+          </h2>
+        </div>
 
-        <p className="mt-1 text-[8px] text-slate-500">
-          {detail}
-        </p>
+        <Clock3 size={17} className="text-[#91A4BF]" />
       </div>
 
-      <span className="size-2 rounded-full bg-emerald-300 shadow-[0_0_12px_rgba(110,231,183,0.75)]" />
-    </div>
+      <div className="px-6">
+        {events.map((event, index) => (
+          <div
+            key={`${event.time}-${event.agent}`}
+            className="relative flex gap-4 border-b border-white/[0.055] py-5 last:border-0"
+          >
+            <div className="flex w-12 shrink-0 flex-col items-center">
+              <span className="font-mono text-[8px] text-[#607089]">
+                {event.time}
+              </span>
+
+              <span
+                className={`mt-3 size-2 rounded-full ${
+                  index === 0
+                    ? "bg-[#FF6B1A] shadow-[0_0_14px_rgba(255,107,26,.7)]"
+                    : "bg-[#2492E8]"
+                }`}
+              />
+            </div>
+
+            <div>
+              <p className="text-xs font-semibold text-[#F7FAFC]">
+                {event.agent}
+              </p>
+
+              <p className="mt-2 text-[10px] leading-5 text-[#91A4BF]">
+                {event.action}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </article>
+  );
+}
+
+function AIDepartment() {
+  return (
+    <article className="rounded-[20px] border border-white/[0.075] bg-[#0B1628]">
+      <div className="flex items-center justify-between border-b border-white/[0.07] px-6 py-5">
+        <div>
+          <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
+            AI Department
+          </p>
+
+          <h2 className="mt-2 text-xl font-semibold tracking-[-0.03em]">
+            Dipendenti digitali
+          </h2>
+        </div>
+
+        <Users size={17} className="text-[#91A4BF]" />
+      </div>
+
+      <div className="grid gap-px bg-white/[0.055] sm:grid-cols-2">
+        {agents.map((agent) => {
+          const Icon = agent.icon;
+
+          return (
+            <div
+              key={agent.name}
+              className="bg-[#0B1628] p-5 transition hover:bg-[#101F35]"
+            >
+              <div className="flex items-start gap-4">
+                <span className="flex size-10 shrink-0 items-center justify-center rounded-[12px] border border-[#2492E8]/18 bg-[#2492E8]/[0.07] text-[#69BDF2]">
+                  <Icon size={17} />
+                </span>
+
+                <div className="min-w-0 flex-1">
+                  <div className="flex items-start justify-between gap-3">
+                    <div>
+                      <p className="text-xs font-semibold">
+                        {agent.name}
+                      </p>
+
+                      <p className="mt-1 text-[8px] text-[#607089]">
+                        {agent.role}
+                      </p>
+                    </div>
+
+                    <span className="inline-flex items-center gap-1.5 text-[7px] font-semibold uppercase tracking-[0.1em] text-[#66E7A6]">
+                      <span className="size-1.5 rounded-full bg-[#24D27C]" />
+                      {agent.status}
+                    </span>
+                  </div>
+
+                  <p className="mt-4 text-[9px] text-[#91A4BF]">
+                    {agent.task}
+                  </p>
+
+                  <div className="mt-3 flex items-center gap-3">
+                    <div className="h-1 flex-1 overflow-hidden rounded-full bg-white/[0.06]">
+                      <div
+                        className="h-full rounded-full bg-[#2492E8]"
+                        style={{
+                          width: `${agent.progress}%`,
+                        }}
+                      />
+                    </div>
+
+                    <span className="font-mono text-[8px] text-[#607089]">
+                      {agent.progress}%
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
+    </article>
   );
 }
