@@ -4,6 +4,10 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
+  CircleDot,
+  Clock3,
+  ArrowUpRight,
+  Activity,
   BarChart3,
   Bot,
   BrainCircuit,
@@ -400,88 +404,249 @@ export default function HomePage() {
         id="department"
         className="relative z-10 mx-auto max-w-[1600px] scroll-mt-32 px-5 py-20 md:px-10"
       >
-        <div className="grid gap-6 xl:grid-cols-[0.82fr_1.18fr]">
-          <article className="rounded-[22px] border border-white/[0.09] bg-[#162D4F] p-7 md:p-10">
-            <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#69BDF2]">
+        <div className="mb-10 flex flex-col justify-between gap-6 xl:flex-row xl:items-end">
+          <div className="max-w-4xl">
+            <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
               AI Marketing Department
             </p>
 
-            <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.038em] md:text-6xl">
-              Non un insieme
-              <br />
-              di strumenti.
-              <span className="mt-2 block text-[#FF6B1A]">
-                Un reparto coordinato.
+            <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.04em] text-white md:text-6xl">
+              Un reparto completo.
+              <span className="block text-[#FF6B1A]">
+                Coordinato da un’unica intelligenza.
               </span>
             </h2>
 
-            <p className="mt-7 text-sm leading-8 text-[#C5D2E1]">
-              Ogni agente svolge un ruolo specifico e collabora con gli
-              altri specialisti per trasformare obiettivi e dati in azioni
-              concrete.
+            <p className="mt-6 max-w-3xl text-sm leading-7 text-[#C0CDDD]">
+              Ogni agente lavora su un compito preciso, condivide dati,
+              priorità e risultati con gli altri specialisti e viene
+              supervisionato dal sistema centrale UVIQ.
             </p>
+          </div>
 
-            <div className="mt-9 space-y-4">
-              <ValuePoint
-                icon={Network}
-                title="Agenti coordinati"
-                text="SEO, contenuti, advertising, CRM e automazioni condividono strategia e dati."
-              />
+          <Link
+            href="/dashboard"
+            className="group inline-flex min-h-13 shrink-0 items-center justify-center gap-3 rounded-[13px] border border-white/[0.12] bg-white/[0.04] px-6 text-xs font-semibold text-white transition hover:border-[#2492E8]/40 hover:bg-white/[0.07]"
+          >
+            Apri Mission Control
+            <ArrowUpRight
+              size={15}
+              className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
+            />
+          </Link>
+        </div>
 
-              <ValuePoint
-                icon={ShieldCheck}
-                title="Controllo professionale"
-                text="Il nostro team supervisiona strategia, qualità e decisioni sensibili."
-              />
+        <div className="grid gap-5 xl:grid-cols-[0.78fr_1.22fr]">
+          <article className="relative overflow-hidden rounded-[24px] border border-white/[0.1] bg-[#162D4F] p-7 md:p-9">
+            <div className="pointer-events-none absolute -right-28 -top-32 size-72 rounded-full bg-[#2492E8]/12 blur-[100px]" />
+            <div className="pointer-events-none absolute -bottom-40 -left-24 size-72 rounded-full bg-[#FF6B1A]/10 blur-[110px]" />
 
-              <ValuePoint
-                icon={TrendingUp}
-                title="Miglioramento continuo"
-                text="KPI, risultati e performance aggiornano costantemente il piano operativo."
-              />
-            </div>
-          </article>
-
-          <article className="overflow-hidden rounded-[22px] border border-white/[0.09] bg-[#0B1628]">
-            <header className="flex items-center justify-between border-b border-white/[0.08] px-6 py-5">
-              <div>
-                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#2492E8]">
-                  Live department
-                </p>
-
-                <h3 className="mt-2 text-xl font-semibold">
-                  Specialisti disponibili
-                </h3>
-              </div>
-
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#24D27C]/20 bg-[#24D27C]/[0.06] px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.12em] text-[#8AF0BA]">
-                <span className="size-1.5 rounded-full bg-[#24D27C]" />
-                Online
-              </span>
-            </header>
-
-            <div className="grid gap-px bg-white/[0.07] sm:grid-cols-2">
-              {agents.map((agent, index) => (
-                <div
-                  key={agent}
-                  className="flex min-h-[120px] items-center gap-4 bg-[#0B1628] p-6 transition hover:bg-[#101D31]"
-                >
-                  <span className="flex size-11 items-center justify-center rounded-[13px] border border-[#2492E8]/20 bg-[#2492E8]/10 text-[#69BDF2]">
-                    <Bot size={18} />
+            <div className="relative">
+              <div className="flex items-start justify-between gap-5">
+                <div className="flex items-center gap-4">
+                  <span className="flex size-13 items-center justify-center rounded-[15px] border border-[#2492E8]/25 bg-[#2492E8]/12 text-[#79C6F5]">
+                    <BrainCircuit size={22} />
                   </span>
 
                   <div>
-                    <p className="text-xs font-semibold text-white">
-                      {agent}
+                    <p className="text-[8px] font-semibold uppercase tracking-[0.16em] text-[#79C6F5]">
+                      CEO AI
                     </p>
 
-                    <p className="mt-2 text-[8px] font-bold uppercase tracking-[0.12em] text-[#8AF0BA]">
-                      {index % 3 === 0 ? "Working" : "Online"}
-                    </p>
+                    <h3 className="mt-2 text-xl font-semibold text-white">
+                      Department Director
+                    </h3>
                   </div>
                 </div>
-              ))}
+
+                <span className="inline-flex items-center gap-2 rounded-full border border-[#24D27C]/18 bg-[#24D27C]/[0.06] px-3 py-1.5 text-[7px] font-semibold uppercase tracking-[0.12em] text-[#8AF0BA]">
+                  <span className="size-1.5 rounded-full bg-[#24D27C] shadow-[0_0_10px_rgba(36,210,124,.7)]" />
+                  Online
+                </span>
+              </div>
+
+              <div className="mt-8 rounded-[18px] border border-white/[0.09] bg-[#07111F]/45 p-5">
+                <p className="text-sm leading-7 text-[#E0E8F1]">
+                  “Sto coordinando strategia, contenuti, acquisizione e
+                  automazioni. Le priorità vengono assegnate in base ai dati
+                  reali dell’azienda.”
+                </p>
+              </div>
+
+              <div className="mt-5 grid gap-3 sm:grid-cols-3 xl:grid-cols-1 2xl:grid-cols-3">
+                <DepartmentMetric
+                  label="Agenti online"
+                  value="8"
+                  icon={Bot}
+                  color="#2492E8"
+                />
+
+                <DepartmentMetric
+                  label="Task attivi"
+                  value="14"
+                  icon={Activity}
+                  color="#FF6B1A"
+                />
+
+                <DepartmentMetric
+                  label="Automazioni"
+                  value="6"
+                  icon={Workflow}
+                  color="#24D27C"
+                />
+              </div>
+
+              <div className="mt-6 space-y-3">
+                <DepartmentValue
+                  icon={Network}
+                  title="Coordinamento centralizzato"
+                  text="Tutti gli agenti condividono obiettivi, dati e priorità."
+                />
+
+                <DepartmentValue
+                  icon={ShieldCheck}
+                  title="Supervisione professionale"
+                  text="Strategia, qualità e decisioni sensibili restano controllate."
+                />
+
+                <DepartmentValue
+                  icon={TrendingUp}
+                  title="Ottimizzazione continua"
+                  text="KPI e risultati aggiornano automaticamente il piano operativo."
+                />
+              </div>
             </div>
+          </article>
+
+          <article className="overflow-hidden rounded-[24px] border border-white/[0.1] bg-[#0B1628]">
+            <header className="flex flex-col justify-between gap-5 border-b border-white/[0.08] px-6 py-6 md:flex-row md:items-center">
+              <div>
+                <div className="flex items-center gap-3">
+                  <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
+                    Live Department
+                  </p>
+
+                  <span className="inline-flex items-center gap-1.5 rounded-full border border-[#24D27C]/16 bg-[#24D27C]/[0.05] px-2.5 py-1 text-[7px] font-semibold uppercase tracking-[0.1em] text-[#8AF0BA]">
+                    <CircleDot size={9} />
+                    8 online
+                  </span>
+                </div>
+
+                <h3 className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
+                  Specialisti attualmente operativi
+                </h3>
+              </div>
+
+              <div className="flex items-center gap-2 text-[9px] text-[#9FB0C4]">
+                <Clock3 size={14} />
+                Aggiornato ora
+              </div>
+            </header>
+
+            <div className="grid gap-px bg-white/[0.07] md:grid-cols-2">
+              <DepartmentAgent
+                name="Marketing Director"
+                role="Strategia e coordinamento"
+                task="Roadmap trimestrale"
+                progress={84}
+                status="Working"
+                color="#2492E8"
+                icon={BrainCircuit}
+              />
+
+              <DepartmentAgent
+                name="SEO Specialist"
+                role="Ricerca e posizionamento"
+                task="83 keyword in analisi"
+                progress={67}
+                status="Working"
+                color="#2492E8"
+                icon={Search}
+              />
+
+              <DepartmentAgent
+                name="Content Strategist"
+                role="Piano editoriale"
+                task="12 contenuti pianificati"
+                progress={72}
+                status="Online"
+                color="#6D4FD2"
+                icon={Megaphone}
+              />
+
+              <DepartmentAgent
+                name="Copywriter"
+                role="Copy e campagne"
+                task="4 campagne in scrittura"
+                progress={58}
+                status="Working"
+                color="#6D4FD2"
+                icon={Sparkles}
+              />
+
+              <DepartmentAgent
+                name="Video Producer"
+                role="Reel e short video"
+                task="3 video in produzione"
+                progress={61}
+                status="Processing"
+                color="#FF6B1A"
+                icon={Bot}
+              />
+
+              <DepartmentAgent
+                name="Meta Ads Specialist"
+                role="Campagne e acquisizione"
+                task="2 campagne monitorate"
+                progress={76}
+                status="Online"
+                color="#FF6B1A"
+                icon={Target}
+              />
+
+              <DepartmentAgent
+                name="CRM Manager"
+                role="Lead e pipeline"
+                task="18 lead in gestione"
+                progress={88}
+                status="Working"
+                color="#24D27C"
+                icon={Network}
+              />
+
+              <DepartmentAgent
+                name="Automation Architect"
+                role="Workflow e follow-up"
+                task="6 flussi operativi"
+                progress={93}
+                status="Running"
+                color="#24D27C"
+                icon={Workflow}
+              />
+            </div>
+
+            <footer className="flex flex-col justify-between gap-5 border-t border-white/[0.08] bg-[#091321] px-6 py-5 md:flex-row md:items-center">
+              <div>
+                <p className="text-[8px] font-semibold uppercase tracking-[0.15em] text-[#79C6F5]">
+                  Department capacity
+                </p>
+
+                <p className="mt-2 text-xs text-[#C9D4E1]">
+                  14 task attivi · 6 automazioni · 3 progetti prioritari
+                </p>
+              </div>
+
+              <Link
+                href="/projects/new"
+                className="group inline-flex min-h-11 items-center justify-center gap-3 rounded-[12px] bg-[#FF6B1A] px-5 text-[10px] font-semibold text-white transition hover:bg-[#FF7D34]"
+              >
+                Configura il tuo reparto
+                <ArrowRight
+                  size={14}
+                  className="transition group-hover:translate-x-1"
+                />
+              </Link>
+            </footer>
           </article>
         </div>
       </section>
@@ -622,6 +787,150 @@ export default function HomePage() {
   );
 }
 
+
+
+function DepartmentMetric({
+  label,
+  value,
+  icon: Icon,
+  color,
+}: {
+  label: string;
+  value: string;
+  icon: typeof Bot;
+  color: string;
+}) {
+  return (
+    <div className="rounded-[14px] border border-white/[0.09] bg-[#07111F]/45 p-4">
+      <Icon size={15} style={{ color }} />
+
+      <p className="mt-4 text-[7px] font-semibold uppercase tracking-[0.13em] text-[#9FB0C4]">
+        {label}
+      </p>
+
+      <p className="mt-2 text-2xl font-semibold tracking-[-0.03em] text-white">
+        {value}
+      </p>
+    </div>
+  );
+}
+
+function DepartmentValue({
+  icon: Icon,
+  title,
+  text,
+}: {
+  icon: typeof Network;
+  title: string;
+  text: string;
+}) {
+  return (
+    <div className="flex items-start gap-4 rounded-[14px] border border-white/[0.09] bg-[#07111F]/42 p-4">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-[12px] border border-[#2492E8]/18 bg-[#2492E8]/10 text-[#79C6F5]">
+        <Icon size={16} />
+      </span>
+
+      <div>
+        <h4 className="text-xs font-semibold text-white">
+          {title}
+        </h4>
+
+        <p className="mt-2 text-[9px] leading-5 text-[#B9C7D8]">
+          {text}
+        </p>
+      </div>
+    </div>
+  );
+}
+
+function DepartmentAgent({
+  name,
+  role,
+  task,
+  progress,
+  status,
+  color,
+  icon: Icon,
+}: {
+  name: string;
+  role: string;
+  task: string;
+  progress: number;
+  status: string;
+  color: string;
+  icon: typeof Bot;
+}) {
+  return (
+    <article className="min-h-[190px] bg-[#0B1628] p-5 transition hover:bg-[#101D31]">
+      <div className="flex items-start gap-4">
+        <span
+          className="flex size-11 shrink-0 items-center justify-center rounded-[13px] border"
+          style={{
+            color,
+            borderColor: `${color}38`,
+            backgroundColor: `${color}14`,
+          }}
+        >
+          <Icon size={18} />
+        </span>
+
+        <div className="min-w-0 flex-1">
+          <div className="flex items-start justify-between gap-3">
+            <div>
+              <h4 className="text-xs font-semibold text-white">
+                {name}
+              </h4>
+
+              <p className="mt-1 text-[8px] text-[#8FA2B9]">
+                {role}
+              </p>
+            </div>
+
+            <span
+              className="inline-flex items-center gap-1.5 text-[7px] font-semibold uppercase tracking-[0.09em]"
+              style={{ color }}
+            >
+              <span
+                className="size-1.5 rounded-full"
+                style={{
+                  backgroundColor: color,
+                  boxShadow: `0 0 9px ${color}80`,
+                }}
+              />
+              {status}
+            </span>
+          </div>
+
+          <div className="mt-6 rounded-[11px] border border-white/[0.06] bg-[#07111F]/45 px-3 py-3">
+            <p className="text-[7px] font-semibold uppercase tracking-[0.12em] text-[#71839B]">
+              Task corrente
+            </p>
+
+            <p className="mt-2 text-[10px] font-medium text-[#D7E1EC]">
+              {task}
+            </p>
+          </div>
+
+          <div className="mt-4 flex items-center gap-3">
+            <div className="h-1.5 flex-1 overflow-hidden rounded-full bg-white/[0.06]">
+              <div
+                className="h-full rounded-full"
+                style={{
+                  width: `${progress}%`,
+                  backgroundColor: color,
+                }}
+              />
+            </div>
+
+            <span className="font-mono text-[8px] text-[#8FA2B9]">
+              {progress}%
+            </span>
+          </div>
+        </div>
+      </div>
+    </article>
+  );
+}
 
 function PricingPreview({
   name,
