@@ -888,3 +888,416 @@ kbd {
 .font-semibold {
   font-weight: 600;
 }
+
+/* =========================================================
+   UVIQ PLATFORM READABILITY SYSTEM
+   Global UX standard for the entire application
+   ========================================================= */
+
+:root {
+  --uviq-text-primary: #F5F8FC;
+  --uviq-text-secondary: #D1DBE7;
+  --uviq-text-muted: #AAB9CA;
+  --uviq-text-subtle: #91A3B8;
+  --uviq-placeholder: #8496AC;
+
+  --uviq-font-xs: 0.75rem;
+  --uviq-font-sm: 0.8125rem;
+  --uviq-font-base: 0.9375rem;
+  --uviq-font-md: 1rem;
+
+  --uviq-line-compact: 1.4;
+  --uviq-line-normal: 1.62;
+  --uviq-line-relaxed: 1.72;
+}
+
+/* Base generale */
+
+html {
+  font-size: 16px;
+  text-rendering: optimizeLegibility;
+}
+
+body {
+  color: var(--uviq-text-primary);
+  font-size: var(--uviq-font-base);
+  line-height: var(--uviq-line-normal);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p,
+li,
+dd,
+dt,
+blockquote {
+  line-height: var(--uviq-line-relaxed);
+}
+
+button,
+a,
+input,
+textarea,
+select,
+option {
+  -webkit-font-smoothing: antialiased;
+}
+
+/* =========================================================
+   MICROTESTI TAILWIND ESISTENTI
+   Porta tutte le dimensioni troppo piccole a valori leggibili
+   ========================================================= */
+
+[class*="text-[6px]"],
+[class*="text-[7px]"],
+[class*="text-[8px]"] {
+  font-size: 0.6875rem !important;
+  line-height: 1.4 !important;
+}
+
+[class*="text-[9px]"] {
+  font-size: 0.75rem !important;
+  line-height: 1.45 !important;
+}
+
+[class*="text-[10px]"] {
+  font-size: 0.8125rem !important;
+  line-height: 1.5 !important;
+}
+
+[class*="text-[11px]"] {
+  font-size: 0.8125rem !important;
+  line-height: 1.5 !important;
+}
+
+[class*="text-[12px]"] {
+  font-size: 0.875rem !important;
+  line-height: 1.55 !important;
+}
+
+/* Mantiene compatti soltanto elementi tecnici reali */
+
+code[class*="text-"],
+pre[class*="text-"],
+.font-mono[class*="text-"] {
+  line-height: 1.45 !important;
+}
+
+/* =========================================================
+   CONTRASTO GLOBALE
+   Corregge i colori troppo spenti usati nel progetto
+   ========================================================= */
+
+[class*="text-[#53657B]"],
+[class*="text-[#5E6978]"],
+[class*="text-[#607089]"],
+[class*="text-[#677A92]"],
+[class*="text-[#71839B]"] {
+  color: #9EADC0 !important;
+}
+
+[class*="text-[#8192A8]"],
+[class*="text-[#8496AC]"],
+[class*="text-[#8A97A8]"],
+[class*="text-[#8FA2B9]"],
+[class*="text-[#91A4BF]"],
+[class*="text-[#9FB0C4]"] {
+  color: #B4C1D0 !important;
+}
+
+[class*="text-[#AAB4C2]"],
+[class*="text-[#AAB9CC]"],
+[class*="text-[#B6C4D6]"],
+[class*="text-[#B7C4D4]"],
+[class*="text-[#B7C7DA]"],
+[class*="text-[#B8C5D4]"],
+[class*="text-[#B9C7D8]"],
+[class*="text-[#C0CDDD]"],
+[class*="text-[#C2CFDE]"],
+[class*="text-[#C3CEDB]"] {
+  color: #D1DBE7 !important;
+}
+
+/* Testi descrittivi generici */
+
+.text-slate-400,
+.text-gray-400,
+.text-zinc-400,
+.text-neutral-400 {
+  color: #B6C3D2 !important;
+}
+
+.text-slate-500,
+.text-gray-500,
+.text-zinc-500,
+.text-neutral-500 {
+  color: #9DADBF !important;
+}
+
+/* =========================================================
+   TITOLI E GERARCHIA
+   ========================================================= */
+
+h1 {
+  line-height: 1.02;
+}
+
+h2 {
+  line-height: 1.08;
+}
+
+h3 {
+  line-height: 1.16;
+}
+
+h4,
+h5,
+h6 {
+  line-height: 1.25;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: #F7FAFD;
+}
+
+/* Evita titoli troppo compressi */
+
+[class*="tracking-[-0.075em]"] {
+  letter-spacing: -0.05em !important;
+}
+
+[class*="tracking-[-0.06em]"],
+[class*="tracking-[-0.055em]"],
+[class*="tracking-[-0.052em]"] {
+  letter-spacing: -0.04em !important;
+}
+
+[class*="tracking-[-0.05em]"],
+[class*="tracking-[-0.045em]"],
+[class*="tracking-[-0.04em]"] {
+  letter-spacing: -0.032em !important;
+}
+
+/* Micro-label uppercase */
+
+.uppercase[class*="tracking-"] {
+  letter-spacing: 0.09em !important;
+  line-height: 1.35 !important;
+}
+
+.uppercase[class*="text-[6px]"],
+.uppercase[class*="text-[7px]"],
+.uppercase[class*="text-[8px]"],
+.uppercase[class*="text-[9px]"] {
+  font-weight: 650 !important;
+}
+
+/* =========================================================
+   FORM, DISCOVERY, SETTINGS E AUDIT
+   ========================================================= */
+
+label {
+  color: #C3CEDB;
+  font-size: 0.8125rem;
+  line-height: 1.45;
+}
+
+input,
+textarea,
+select {
+  min-height: 2.875rem;
+  color: #F4F7FB !important;
+  font-size: 0.9375rem !important;
+  line-height: 1.5 !important;
+}
+
+textarea {
+  min-height: 7rem;
+  line-height: 1.65 !important;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: var(--uviq-placeholder) !important;
+  opacity: 1;
+}
+
+select option {
+  color: #111827;
+  background: #FFFFFF;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  outline: none;
+}
+
+/* Checkbox e radio */
+
+input[type="checkbox"],
+input[type="radio"] {
+  min-height: auto;
+}
+
+/* =========================================================
+   PULSANTI E CTA
+   ========================================================= */
+
+button,
+[role="button"],
+a[class*="rounded-"] {
+  line-height: 1.25;
+}
+
+button[class*="text-[7px]"],
+button[class*="text-[8px]"],
+button[class*="text-[9px]"],
+a[class*="text-[7px]"],
+a[class*="text-[8px]"],
+a[class*="text-[9px]"] {
+  font-size: 0.75rem !important;
+}
+
+button[class*="font-bold"],
+a[class*="font-bold"] {
+  font-weight: 650 !important;
+}
+
+/* CTA principali sempre ben leggibili */
+
+[class*="bg-[#FF6B1A]"] {
+  color: #FFFFFF !important;
+}
+
+/* =========================================================
+   SIDEBAR E NAVBAR
+   ========================================================= */
+
+nav a,
+nav button {
+  line-height: 1.35;
+}
+
+aside [class*="text-[7px]"],
+aside [class*="text-[8px]"],
+aside [class*="text-[9px]"],
+nav [class*="text-[7px]"],
+nav [class*="text-[8px]"],
+nav [class*="text-[9px]"] {
+  font-size: 0.75rem !important;
+}
+
+aside p,
+aside span,
+nav p,
+nav span {
+  text-rendering: geometricPrecision;
+}
+
+/* =========================================================
+   TABELLE, REPORT E BUSINESS TWIN
+   ========================================================= */
+
+table {
+  font-size: 0.875rem;
+}
+
+th {
+  color: #BAC7D6;
+  font-size: 0.75rem;
+  font-weight: 650;
+  letter-spacing: 0.07em;
+  line-height: 1.4;
+}
+
+td {
+  color: #D6DFE9;
+  font-size: 0.875rem;
+  line-height: 1.55;
+}
+
+summary {
+  line-height: 1.5;
+}
+
+/* =========================================================
+   CARD E TESTI SECONDARI
+   ========================================================= */
+
+article p,
+section p {
+  text-wrap: pretty;
+}
+
+article [class*="text-sm"],
+section [class*="text-sm"] {
+  line-height: 1.7;
+}
+
+[class*="leading-5"] {
+  line-height: 1.55 !important;
+}
+
+[class*="leading-6"] {
+  line-height: 1.65 !important;
+}
+
+/* =========================================================
+   ACCESSIBILITÀ E RESPONSIVE
+   ========================================================= */
+
+@media (max-width: 767px) {
+  body {
+    font-size: 0.9375rem;
+  }
+
+  [class*="text-[6px]"],
+  [class*="text-[7px]"],
+  [class*="text-[8px]"],
+  [class*="text-[9px]"] {
+    font-size: 0.6875rem !important;
+  }
+
+  input,
+  textarea,
+  select {
+    font-size: 1rem !important;
+  }
+}
+
+@media (min-width: 1440px) {
+  body {
+    font-size: 1rem;
+  }
+
+  [class*="text-[9px]"] {
+    font-size: 0.78125rem !important;
+  }
+
+  [class*="text-[10px]"],
+  [class*="text-[11px]"] {
+    font-size: 0.84375rem !important;
+  }
+}
+
+/* Supporto per utenti che richiedono più contrasto */
+
+@media (prefers-contrast: more) {
+  :root {
+    --uviq-text-secondary: #E0E7EF;
+    --uviq-text-muted: #C5D0DC;
+    --uviq-text-subtle: #B2C0CF;
+  }
+
+  [class*="text-[#"] {
+    filter: brightness(1.12);
+  }
+}
+
+
