@@ -2,240 +2,233 @@ import Image from "next/image";
 import Link from "next/link";
 import {
   ArrowRight,
-  ArrowUpRight,
   BarChart3,
   Bot,
   BrainCircuit,
+  BriefcaseBusiness,
+  Building2,
+  Car,
+  Check,
   CheckCircle2,
-  CircleDot,
-  FileVideo2,
+  Dumbbell,
+  Factory,
   Globe2,
+  HeartPulse,
+  Hotel,
   LayoutGrid,
   Megaphone,
-  MessageSquareText,
   Network,
   Search,
   ShieldCheck,
+  ShoppingBag,
   Sparkles,
   Target,
   TrendingUp,
-  Users,
+  Utensils,
   Workflow,
 } from "lucide-react";
 
-const department = [
+const sectors = [
   {
-    name: "Marketing Director",
-    role: "Strategia e coordinamento",
-    status: "Working",
-    progress: 84,
-    icon: BrainCircuit,
-    color: "#2492E8",
-  },
-  {
-    name: "Content Strategist",
-    role: "Piano editoriale e copy",
-    status: "Working",
-    progress: 72,
-    icon: Megaphone,
-    color: "#6D4FD2",
-  },
-  {
-    name: "Video Producer",
-    role: "Reel, Shorts e creatività",
-    status: "Processing",
-    progress: 58,
-    icon: FileVideo2,
+    name: "Ristorazione",
+    description:
+      "Prenotazioni, menù digitale, recensioni, social, delivery e fidelizzazione.",
+    icon: Utensils,
     color: "#FF6B1A",
   },
   {
-    name: "Automation Architect",
-    role: "CRM, WhatsApp e workflow",
-    status: "Running",
-    progress: 91,
-    icon: Workflow,
+    name: "Hospitality",
+    description:
+      "Prenotazione diretta, camere, offerte, reputazione e customer journey.",
+    icon: Hotel,
+    color: "#2492E8",
+  },
+  {
+    name: "Sanità e benessere",
+    description:
+      "Acquisizione pazienti, prenotazioni, reminder e autorevolezza digitale.",
+    icon: HeartPulse,
     color: "#24D27C",
+  },
+  {
+    name: "Fitness e sport",
+    description:
+      "Lead, prove gratuite, abbonamenti, corsi, community e retention.",
+    icon: Dumbbell,
+    color: "#6D4FD2",
+  },
+  {
+    name: "Automotive",
+    description:
+      "Richieste preventivo, appuntamenti, assistenza e recupero clienti.",
+    icon: Car,
+    color: "#FF8A4A",
+  },
+  {
+    name: "Industria e B2B",
+    description:
+      "Lead qualificati, prodotti, certificazioni, rete commerciale ed export.",
+    icon: Factory,
+    color: "#4B8EFF",
+  },
+  {
+    name: "Professionisti",
+    description:
+      "Autorevolezza, servizi, acquisizione contatti e follow-up automatici.",
+    icon: BriefcaseBusiness,
+    color: "#9B86EA",
+  },
+  {
+    name: "Retail ed ecommerce",
+    description:
+      "Cataloghi, campagne, clienti inattivi, conversione e riacquisto.",
+    icon: ShoppingBag,
+    color: "#F5A623",
   },
 ];
 
-const capabilities = [
+const steps = [
   {
     number: "01",
-    title: "Business Intelligence",
+    title: "Analizza",
     description:
-      "Analizza sito, SEO, social, reputazione, competitor e processi commerciali.",
+      "UVIQ raccoglie dati da sito, Google, social, recensioni e processi commerciali.",
     icon: Search,
-    color: "#2492E8",
   },
   {
     number: "02",
-    title: "Marketing Department",
+    title: "Progetta",
     description:
-      "Costruisce strategia, contenuti, campagne e piani operativi su misura.",
-    icon: Users,
-    color: "#6D4FD2",
+      "Gli agenti costruiscono strategia, priorità, funnel, contenuti e roadmap.",
+    icon: BrainCircuit,
   },
   {
     number: "03",
-    title: "Automation Engine",
+    title: "Produce",
     description:
-      "Automatizza lead, follow-up, CRM, email, WhatsApp, recensioni e report.",
+      "Il sistema genera post, copy, campagne, reel, email, landing e materiali.",
+    icon: Megaphone,
+  },
+  {
+    number: "04",
+    title: "Automatizza",
+    description:
+      "CRM, follow-up, WhatsApp, email, recensioni e report lavorano in automatico.",
     icon: Workflow,
-    color: "#FF6B1A",
   },
 ];
 
-const sectors = [
-  "Ristorazione",
-  "Hospitality",
-  "Healthcare",
-  "Fitness",
-  "Automotive",
-  "Industria",
-  "Professionisti",
+const agents = [
+  "Marketing Director",
+  "SEO Specialist",
+  "Content Strategist",
+  "Copywriter",
+  "Video Producer",
+  "Meta Ads Specialist",
+  "CRM Manager",
+  "Automation Architect",
+];
+
+const pricing = [
+  {
+    name: "Starter",
+    description:
+      "Per piccole attività che vogliono organizzare il marketing e iniziare ad automatizzare.",
+    price: "490 €",
+    suffix: "/mese",
+    featured: false,
+    features: [
+      "1 azienda",
+      "Business Intelligence",
+      "Piano marketing AI",
+      "Piano editoriale",
+      "Generazione contenuti",
+      "Report mensile",
+      "2 automazioni operative",
+    ],
+  },
+  {
+    name: "Growth",
+    description:
+      "Per aziende che vogliono un vero reparto marketing digitale continuativo.",
+    price: "990 €",
+    suffix: "/mese",
+    featured: true,
+    features: [
+      "Tutto il piano Starter",
+      "CRM e pipeline lead",
+      "Email e WhatsApp automation",
+      "Content Factory",
+      "Reel e short video",
+      "Meta e Google support",
+      "Report e ottimizzazione continua",
+    ],
+  },
+  {
+    name: "Scale",
+    description:
+      "Per aziende strutturate, gruppi, reti commerciali e progetti multisede.",
+    price: "Su misura",
+    suffix: "",
+    featured: false,
+    features: [
+      "Più aziende o sedi",
+      "Agenti AI personalizzati",
+      "Workflow avanzati",
+      "Integrazioni API",
+      "Dashboard dedicate",
+      "Supporto prioritario",
+      "Consulenza strategica",
+    ],
+  },
 ];
 
 export default function HomePage() {
   return (
-    <main className="min-h-screen overflow-hidden bg-[#07111F] text-[#F7FAFC]">
-      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(255,255,255,.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.018)_1px,transparent_1px)] bg-[size:72px_72px]" />
+    <main className="min-h-screen overflow-hidden bg-[#07111F] text-white">
+      <Background />
 
-      <div className="pointer-events-none fixed -left-72 -top-64 size-[48rem] rounded-full bg-[#2492E8]/[0.09] blur-[170px]" />
-      <div className="pointer-events-none fixed -right-72 top-0 size-[52rem] rounded-full bg-[#6D4FD2]/[0.11] blur-[180px]" />
-      <div className="pointer-events-none fixed bottom-[-26rem] left-1/3 size-[46rem] rounded-full bg-[#FF6B1A]/[0.08] blur-[180px]" />
-
-      <header className="relative z-30 px-4 pt-5 md:px-7 md:pt-7">
-        <div className="mx-auto max-w-[1600px]">
-          <div className="relative overflow-hidden rounded-[22px] border border-white/[0.09] bg-[#081425]/95 shadow-[0_24px_70px_rgba(0,0,0,.32)] backdrop-blur-2xl">
-            <div className="pointer-events-none absolute inset-0 rounded-[22px] bg-[linear-gradient(100deg,rgba(36,146,232,.18),transparent_28%,transparent_72%,rgba(255,107,26,.16))] opacity-80" />
-
-            <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-[#2492E8]/80 via-white/10 to-[#FF6B1A]/80" />
-
-            <div className="relative flex min-h-[108px] items-center justify-between px-5 md:px-7 xl:px-9">
-              <Link
-                href="/"
-                className="group flex shrink-0 items-center gap-4"
-              >
-                <span className="flex size-16 items-center justify-center rounded-[16px] border border-[#2492E8]/15 bg-[#0D1D34] p-2.5 shadow-[0_12px_30px_rgba(0,0,0,.28)] transition group-hover:border-[#2492E8]/35">
-                  <Image
-                    src="/uviq-logo.svg"
-                    alt="UVIQ"
-                    width={50}
-                    height={50}
-                    priority
-                    className="size-full object-contain"
-                  />
-                </span>
-
-                <span className="hidden sm:block">
-                  <span className="flex items-center gap-3">
-                    <span className="text-[28px] font-bold tracking-[-0.06em] text-white">
-                      UVIQ
-                    </span>
-
-                    <span className="rounded-full bg-gradient-to-r from-[#2492E8] to-[#4B8EFF] px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(36,146,232,.24)]">
-                      AI OS
-                    </span>
-                  </span>
-
-                  <span className="mt-1.5 block text-[7px] font-semibold uppercase tracking-[0.32em] text-[#AAB9CC]">
-                    AI Business Operating System
-                  </span>
-                </span>
-              </Link>
-
-              <div className="mx-8 hidden h-16 w-px bg-white/[0.07] xl:block" />
-
-              <nav className="hidden flex-1 items-center justify-center gap-10 lg:flex xl:gap-14">
-                <NavItem href="#product" label="Prodotto" active />
-                <NavItem href="#department" label="Reparto AI" />
-                <NavItem href="#capabilities" label="Funzioni" />
-                <NavItem href="#sectors" label="Settori" />
-              </nav>
-
-              <div className="mx-8 hidden h-16 w-px bg-white/[0.07] xl:block" />
-
-              <div className="flex shrink-0 items-center gap-3">
-                <Link
-                  href="/dashboard"
-                  className="hidden min-h-12 items-center gap-3 rounded-[13px] border border-white/[0.12] bg-[#091323] px-5 text-[11px] font-semibold text-white shadow-[0_10px_25px_rgba(0,0,0,.2)] transition hover:border-[#2492E8]/40 hover:bg-[#0E1C31] md:inline-flex"
-                >
-                  <LayoutGrid
-                    size={16}
-                    className="text-[#2492E8]"
-                  />
-                  Workspace
-                </Link>
-
-                <Link
-                  href="/projects/new"
-                  className="group inline-flex min-h-12 items-center gap-3 rounded-[13px] bg-[#FF6B1A] px-5 text-[11px] font-bold text-white shadow-[0_12px_34px_rgba(255,107,26,.32)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34] hover:shadow-[0_16px_42px_rgba(255,107,26,.4)] md:px-6"
-                >
-                  <span className="hidden sm:inline">
-                    Nuovo progetto
-                  </span>
-
-                  <span className="sm:hidden">
-                    Nuovo
-                  </span>
-
-                  <ArrowRight
-                    size={15}
-                    className="transition group-hover:translate-x-1"
-                  />
-                </Link>
-              </div>
-            </div>
-
-            <nav className="relative grid grid-cols-4 border-t border-white/[0.07] bg-[#07111F]/70 lg:hidden">
-              <MobileNavItem href="#product" label="Prodotto" active />
-              <MobileNavItem href="#department" label="Reparto AI" />
-              <MobileNavItem href="#capabilities" label="Funzioni" />
-              <MobileNavItem href="#sectors" label="Settori" />
-            </nav>
-          </div>
-        </div>
-      </header>
+      <Navbar />
 
       <section
         id="product"
-        className="relative z-10 mx-auto max-w-[1600px] px-5 pb-20 pt-16 md:px-10 md:pt-24"
+        className="relative z-10 mx-auto max-w-[1600px] scroll-mt-32 px-5 pb-20 pt-16 md:px-10 md:pt-24"
       >
-        <div className="grid items-center gap-16 xl:grid-cols-[0.98fr_1.02fr]">
+        <div className="grid items-center gap-16 xl:grid-cols-[0.95fr_1.05fr]">
           <div>
-            <div className="inline-flex items-center gap-3 rounded-full border border-[#24D27C]/18 bg-[#24D27C]/[0.055] px-4 py-2">
+            <div className="inline-flex items-center gap-3 rounded-full border border-[#24D27C]/20 bg-[#24D27C]/[0.06] px-4 py-2">
               <span className="relative flex size-2">
                 <span className="absolute inline-flex size-full animate-ping rounded-full bg-[#24D27C] opacity-50" />
                 <span className="relative inline-flex size-2 rounded-full bg-[#24D27C]" />
               </span>
 
-              <span className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#66E7A6]">
-                Marketing Department Online
+              <span className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#8AF0BA]">
+                AI Marketing Department Online
               </span>
             </div>
 
-            <h1 className="mt-8 max-w-5xl text-[clamp(4rem,7.2vw,8.2rem)] font-semibold leading-[0.87] tracking-[-0.075em]">
-              Il marketing
+            <h1 className="mt-8 max-w-5xl text-[clamp(4rem,7vw,8rem)] font-semibold leading-[0.87] tracking-[-0.075em]">
+              Il reparto
               <br />
-              della tua azienda.
+              marketing della
               <br />
               <span className="text-[#FF6B1A]">
-                Sempre operativo.
+                tua azienda.
               </span>
             </h1>
 
-            <p className="mt-8 max-w-2xl text-base leading-8 text-[#91A4BF] md:text-lg">
-              UVIQ analizza, pianifica, produce, pubblica, automatizza e
-              ottimizza il marketing attraverso agenti AI specializzati
+            <p className="mt-8 max-w-2xl text-base leading-8 text-[#C0CDDD] md:text-lg">
+              UVIQ analizza, pianifica, crea, pubblica, automatizza e
+              ottimizza il marketing attraverso agenti AI specializzati,
               coordinati dal nostro team.
             </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row">
               <Link
                 href="/projects/new"
-                className="group inline-flex min-h-14 items-center justify-center gap-4 rounded-[14px] bg-[#FF6B1A] px-7 text-xs font-semibold text-white shadow-[0_18px_46px_rgba(255,107,26,.25)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
+                className="group inline-flex min-h-14 items-center justify-center gap-4 rounded-[14px] bg-[#FF6B1A] px-7 text-xs font-bold text-white shadow-[0_18px_48px_rgba(255,107,26,.28)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
               >
-                Costruisci il reparto marketing
+                Avvia una nuova intelligence
                 <ArrowRight
                   size={16}
                   className="transition group-hover:translate-x-1"
@@ -244,447 +237,610 @@ export default function HomePage() {
 
               <Link
                 href="/dashboard"
-                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-[14px] border border-white/[0.1] bg-white/[0.035] px-7 text-xs font-semibold text-[#D7E1EC] transition hover:border-white/[0.16] hover:bg-white/[0.065]"
+                className="inline-flex min-h-14 items-center justify-center gap-3 rounded-[14px] border border-white/[0.13] bg-white/[0.04] px-7 text-xs font-bold text-white transition hover:border-[#2492E8]/40 hover:bg-white/[0.07]"
               >
-                <BarChart3 size={15} />
+                <LayoutGrid size={15} className="text-[#2492E8]" />
                 Esplora Mission Control
               </Link>
             </div>
 
-            <div id="sectors" className="mt-12 flex flex-wrap gap-2">
-              {sectors.map((sector) => (
-                <span
-                  key={sector}
-                  className="rounded-full border border-white/[0.075] bg-white/[0.025] px-3 py-2 text-[8px] uppercase tracking-[0.12em] text-[#607089]"
-                >
-                  {sector}
-                </span>
-              ))}
+            <div className="mt-12 grid max-w-2xl grid-cols-3 gap-3">
+              <HeroMetric value="12" label="Agenti AI" />
+              <HeroMetric value="24/7" label="Sistema operativo" />
+              <HeroMetric value="8" label="Settori attivi" />
             </div>
           </div>
 
-          <OperatingSystemPanel />
+          <MissionControlPreview />
         </div>
+      </section>
 
-        <section
-          id="capabilities"
-          className="mt-24 grid gap-4 md:grid-cols-3"
-        >
-          {capabilities.map((capability) => {
-            const Icon = capability.icon;
+      <section
+        id="functions"
+        className="relative z-10 mx-auto max-w-[1600px] scroll-mt-32 px-5 py-20 md:px-10"
+      >
+        <SectionHeading
+          eyebrow="Metodo operativo"
+          title="Dall’analisi all’esecuzione."
+          description="UVIQ non si limita a suggerire cosa fare. Organizza il lavoro e trasforma la strategia in attività operative."
+        />
+
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {steps.map((step) => {
+            const Icon = step.icon;
 
             return (
               <article
-                key={capability.number}
-                className="group relative min-h-[270px] overflow-hidden rounded-[20px] border border-white/[0.075] bg-[#0B1628] p-6 transition hover:border-white/[0.13] hover:bg-[#101D31]"
+                key={step.number}
+                className="relative min-h-[300px] overflow-hidden rounded-[20px] border border-white/[0.09] bg-[#0B1628] p-6 transition hover:-translate-y-1 hover:border-[#2492E8]/30 hover:bg-[#101D31]"
               >
-                <div
-                  className="pointer-events-none absolute -right-20 -top-20 size-48 rounded-full opacity-[0.08] blur-[70px]"
-                  style={{
-                    backgroundColor: capability.color,
-                  }}
-                />
+                <div className="flex items-start justify-between">
+                  <span className="flex size-12 items-center justify-center rounded-[14px] border border-[#2492E8]/20 bg-[#2492E8]/10 text-[#69BDF2]">
+                    <Icon size={20} />
+                  </span>
 
-                <div className="relative flex h-full flex-col">
-                  <div className="flex items-start justify-between">
-                    <span
-                      className="flex size-11 items-center justify-center rounded-[13px] border"
-                      style={{
-                        color: capability.color,
-                        borderColor: `${capability.color}30`,
-                        backgroundColor: `${capability.color}12`,
-                      }}
-                    >
-                      <Icon size={19} />
-                    </span>
-
-                    <span className="font-mono text-[9px] text-[#607089]">
-                      {capability.number}
-                    </span>
-                  </div>
-
-                  <h2 className="mt-10 text-2xl font-semibold tracking-[-0.035em]">
-                    {capability.title}
-                  </h2>
-
-                  <p className="mt-4 text-sm leading-7 text-[#91A4BF]">
-                    {capability.description}
-                  </p>
-
-                  <span className="mt-auto inline-flex items-center gap-2 pt-8 text-[9px] font-semibold uppercase tracking-[0.14em] text-[#FF8A4A]">
-                    Scopri il modulo
-                    <ArrowUpRight
-                      size={13}
-                      className="transition group-hover:-translate-y-0.5 group-hover:translate-x-0.5"
-                    />
+                  <span className="font-mono text-[10px] text-[#71839B]">
+                    {step.number}
                   </span>
                 </div>
+
+                <h3 className="mt-10 text-2xl font-semibold tracking-[-0.04em]">
+                  {step.title}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-[#B6C4D6]">
+                  {step.description}
+                </p>
               </article>
             );
           })}
-        </section>
+        </div>
+      </section>
 
-        <section
-          id="department"
-          className="mt-6 grid gap-6 xl:grid-cols-[0.85fr_1.15fr]"
-        >
-          <article className="rounded-[20px] border border-white/[0.075] bg-[#0B1628] p-7 md:p-9">
-            <p className="text-[9px] font-semibold uppercase tracking-[0.19em] text-[#2492E8]">
+      <section
+        id="sectors"
+        className="relative z-10 mx-auto max-w-[1600px] scroll-mt-32 px-5 py-20 md:px-10"
+      >
+        <SectionHeading
+          eyebrow="Intelligence multisettore"
+          title="Un modello specifico per ogni attività."
+          description="Metriche, agenti, priorità e automazioni cambiano in base al settore e al modello commerciale."
+        />
+
+        <div className="mt-12 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {sectors.map((sector) => {
+            const Icon = sector.icon;
+
+            return (
+              <Link
+                key={sector.name}
+                href="/projects/new"
+                className="group min-h-[260px] rounded-[20px] border border-white/[0.09] bg-[#0B1628] p-6 transition hover:-translate-y-1 hover:border-white/[0.16] hover:bg-[#101D31]"
+              >
+                <span
+                  className="flex size-12 items-center justify-center rounded-[14px] border"
+                  style={{
+                    color: sector.color,
+                    borderColor: `${sector.color}35`,
+                    backgroundColor: `${sector.color}14`,
+                  }}
+                >
+                  <Icon size={20} />
+                </span>
+
+                <h3 className="mt-8 text-xl font-semibold tracking-[-0.03em]">
+                  {sector.name}
+                </h3>
+
+                <p className="mt-4 text-sm leading-7 text-[#B6C4D6]">
+                  {sector.description}
+                </p>
+
+                <span className="mt-7 inline-flex items-center gap-2 text-[9px] font-bold uppercase tracking-[0.13em] text-[#FF8A4A]">
+                  Configura settore
+                  <ArrowRight
+                    size={13}
+                    className="transition group-hover:translate-x-1"
+                  />
+                </span>
+              </Link>
+            );
+          })}
+        </div>
+      </section>
+
+      <section
+        id="department"
+        className="relative z-10 mx-auto max-w-[1600px] scroll-mt-32 px-5 py-20 md:px-10"
+      >
+        <div className="grid gap-6 xl:grid-cols-[0.82fr_1.18fr]">
+          <article className="rounded-[22px] border border-white/[0.09] bg-[#162D4F] p-7 md:p-10">
+            <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#69BDF2]">
               AI Marketing Department
             </p>
 
-            <h2 className="mt-5 text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-5xl">
-              Non un altro software.
+            <h2 className="mt-5 text-4xl font-semibold leading-[0.98] tracking-[-0.055em] md:text-6xl">
+              Non un insieme
+              <br />
+              di strumenti.
               <span className="mt-2 block text-[#FF6B1A]">
-                Un reparto operativo.
+                Un reparto coordinato.
               </span>
             </h2>
 
-            <p className="mt-6 text-sm leading-7 text-[#91A4BF]">
-              Ogni agente ha un ruolo preciso, lavora sui dati dell’azienda
-              e collabora con gli altri specialisti per trasformare la
-              strategia in attività concrete.
+            <p className="mt-7 text-sm leading-8 text-[#C5D2E1]">
+              Ogni agente svolge un ruolo specifico e collabora con gli
+              altri specialisti per trasformare obiettivi e dati in azioni
+              concrete.
             </p>
 
-            <div className="mt-8 space-y-4">
-              <ValuePoint
-                icon={ShieldCheck}
-                title="Supervisione umana"
-                text="Strategia e qualità restano sotto il controllo del nostro team."
-              />
-
+            <div className="mt-9 space-y-4">
               <ValuePoint
                 icon={Network}
                 title="Agenti coordinati"
-                text="SEO, contenuti, advertising, CRM e automazioni lavorano insieme."
+                text="SEO, contenuti, advertising, CRM e automazioni condividono strategia e dati."
+              />
+
+              <ValuePoint
+                icon={ShieldCheck}
+                title="Controllo professionale"
+                text="Il nostro team supervisiona strategia, qualità e decisioni sensibili."
               />
 
               <ValuePoint
                 icon={TrendingUp}
-                title="Ottimizzazione continua"
-                text="Ogni attività viene misurata e migliorata attraverso KPI reali."
+                title="Miglioramento continuo"
+                text="KPI, risultati e performance aggiornano costantemente il piano operativo."
               />
             </div>
           </article>
 
-          <article className="overflow-hidden rounded-[20px] border border-white/[0.075] bg-[#0B1628]">
-            <header className="flex items-center justify-between border-b border-white/[0.07] px-6 py-5">
+          <article className="overflow-hidden rounded-[22px] border border-white/[0.09] bg-[#0B1628]">
+            <header className="flex items-center justify-between border-b border-white/[0.08] px-6 py-5">
               <div>
-                <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
-                  Live Department
+                <p className="text-[9px] font-bold uppercase tracking-[0.18em] text-[#2492E8]">
+                  Live department
                 </p>
 
                 <h3 className="mt-2 text-xl font-semibold">
-                  Agenti attualmente al lavoro
+                  Specialisti disponibili
                 </h3>
               </div>
 
-              <span className="inline-flex items-center gap-2 rounded-full border border-[#24D27C]/15 bg-[#24D27C]/[0.05] px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.12em] text-[#66E7A6]">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#24D27C]/20 bg-[#24D27C]/[0.06] px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.12em] text-[#8AF0BA]">
                 <span className="size-1.5 rounded-full bg-[#24D27C]" />
-                12 online
+                Online
               </span>
             </header>
 
-            <div className="grid gap-px bg-white/[0.055] sm:grid-cols-2">
-              {department.map((agent) => {
-                const Icon = agent.icon;
+            <div className="grid gap-px bg-white/[0.07] sm:grid-cols-2">
+              {agents.map((agent, index) => (
+                <div
+                  key={agent}
+                  className="flex min-h-[120px] items-center gap-4 bg-[#0B1628] p-6 transition hover:bg-[#101D31]"
+                >
+                  <span className="flex size-11 items-center justify-center rounded-[13px] border border-[#2492E8]/20 bg-[#2492E8]/10 text-[#69BDF2]">
+                    <Bot size={18} />
+                  </span>
 
-                return (
-                  <div
-                    key={agent.name}
-                    className="bg-[#0B1628] p-6 transition hover:bg-[#101D31]"
-                  >
-                    <div className="flex items-start gap-4">
-                      <span
-                        className="flex size-11 shrink-0 items-center justify-center rounded-[13px] border"
-                        style={{
-                          color: agent.color,
-                          borderColor: `${agent.color}30`,
-                          backgroundColor: `${agent.color}12`,
-                        }}
-                      >
-                        <Icon size={18} />
-                      </span>
+                  <div>
+                    <p className="text-xs font-semibold text-white">
+                      {agent}
+                    </p>
 
-                      <div className="min-w-0 flex-1">
-                        <div className="flex items-start justify-between gap-3">
-                          <div>
-                            <p className="text-xs font-semibold">
-                              {agent.name}
-                            </p>
-
-                            <p className="mt-1 text-[8px] text-[#607089]">
-                              {agent.role}
-                            </p>
-                          </div>
-
-                          <span className="inline-flex items-center gap-1.5 text-[7px] font-semibold uppercase tracking-[0.1em] text-[#66E7A6]">
-                            <span className="size-1.5 rounded-full bg-[#24D27C]" />
-                            {agent.status}
-                          </span>
-                        </div>
-
-                        <div className="mt-5 flex items-center gap-3">
-                          <div className="h-1 flex-1 overflow-hidden rounded-full bg-white/[0.06]">
-                            <div
-                              className="h-full rounded-full"
-                              style={{
-                                width: `${agent.progress}%`,
-                                backgroundColor: agent.color,
-                              }}
-                            />
-                          </div>
-
-                          <span className="font-mono text-[8px] text-[#607089]">
-                            {agent.progress}%
-                          </span>
-                        </div>
-                      </div>
-                    </div>
+                    <p className="mt-2 text-[8px] font-bold uppercase tracking-[0.12em] text-[#8AF0BA]">
+                      {index % 3 === 0 ? "Working" : "Online"}
+                    </p>
                   </div>
-                );
-              })}
+                </div>
+              ))}
             </div>
           </article>
-        </section>
+        </div>
+      </section>
 
-        <section className="relative mt-6 overflow-hidden rounded-[22px] border border-white/[0.075] bg-[#162D4F] px-7 py-10 md:px-10 md:py-14">
-          <div className="pointer-events-none absolute -right-36 -top-48 size-[30rem] rounded-full bg-[#FF6B1A]/20 blur-[110px]" />
-          <div className="pointer-events-none absolute bottom-[-14rem] left-1/3 size-[26rem] rounded-full bg-[#2492E8]/15 blur-[120px]" />
+      <section
+        id="pricing"
+        className="relative z-10 mx-auto max-w-[1600px] scroll-mt-32 px-5 py-20 md:px-10"
+      >
+        <SectionHeading
+          eyebrow="Pricing"
+          title="Un reparto marketing adatto alla tua crescita."
+          description="Configurazioni indicative per aziende con necessità e livelli di operatività differenti."
+        />
 
-          <div className="relative flex flex-col justify-between gap-8 xl:flex-row xl:items-end">
+        <div className="mt-12 grid gap-5 xl:grid-cols-3">
+          {pricing.map((plan) => (
+            <article
+              key={plan.name}
+              className={`relative rounded-[22px] border p-7 md:p-8 ${
+                plan.featured
+                  ? "border-[#FF6B1A]/50 bg-[#13233A] shadow-[0_24px_70px_rgba(255,107,26,.13)]"
+                  : "border-white/[0.09] bg-[#0B1628]"
+              }`}
+            >
+              {plan.featured && (
+                <span className="absolute right-5 top-5 rounded-full bg-[#FF6B1A] px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white">
+                  Consigliato
+                </span>
+              )}
+
+              <p className="text-[10px] font-bold uppercase tracking-[0.18em] text-[#69BDF2]">
+                {plan.name}
+              </p>
+
+              <div className="mt-6 flex items-end gap-2">
+                <span className="text-5xl font-semibold tracking-[-0.055em]">
+                  {plan.price}
+                </span>
+
+                {plan.suffix && (
+                  <span className="pb-1 text-sm text-[#B6C4D6]">
+                    {plan.suffix}
+                  </span>
+                )}
+              </div>
+
+              <p className="mt-5 min-h-[84px] text-sm leading-7 text-[#B6C4D6]">
+                {plan.description}
+              </p>
+
+              <div className="mt-7 space-y-3 border-t border-white/[0.08] pt-7">
+                {plan.features.map((feature) => (
+                  <div
+                    key={feature}
+                    className="flex items-start gap-3 text-sm text-[#D4DEEA]"
+                  >
+                    <span className="mt-0.5 flex size-5 shrink-0 items-center justify-center rounded-full bg-[#24D27C]/10 text-[#8AF0BA]">
+                      <Check size={12} />
+                    </span>
+
+                    {feature}
+                  </div>
+                ))}
+              </div>
+
+              <Link
+                href="/projects/new"
+                className={`mt-8 inline-flex min-h-12 w-full items-center justify-center gap-3 rounded-[13px] text-xs font-bold transition ${
+                  plan.featured
+                    ? "bg-[#FF6B1A] text-white hover:bg-[#FF7D34]"
+                    : "border border-white/[0.12] bg-white/[0.04] text-white hover:bg-white/[0.08]"
+                }`}
+              >
+                Richiedi configurazione
+                <ArrowRight size={14} />
+              </Link>
+            </article>
+          ))}
+        </div>
+
+        <p className="mt-5 text-center text-[10px] leading-5 text-[#8192A8]">
+          Prezzi indicativi. Configurazione, volume di contenuti,
+          integrazioni e automazioni vengono definiti in base al progetto.
+        </p>
+      </section>
+
+      <section className="relative z-10 mx-auto max-w-[1600px] px-5 pb-20 pt-10 md:px-10">
+        <div className="relative overflow-hidden rounded-[24px] border border-white/[0.1] bg-[#162D4F] px-7 py-12 md:px-12 md:py-16">
+          <div className="pointer-events-none absolute -right-40 -top-52 size-[32rem] rounded-full bg-[#FF6B1A]/20 blur-[120px]" />
+
+          <div className="relative flex flex-col justify-between gap-10 xl:flex-row xl:items-end">
             <div>
-              <p className="text-[9px] font-semibold uppercase tracking-[0.18em] text-[#69BDF2]">
+              <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#69BDF2]">
                 Deploy UVIQ
               </p>
 
-              <h2 className="mt-4 max-w-4xl text-4xl font-semibold leading-[0.98] tracking-[-0.05em] md:text-6xl">
-                Costruisci oggi il reparto marketing della tua azienda.
+              <h2 className="mt-5 max-w-5xl text-4xl font-semibold leading-[0.98] tracking-[-0.055em] md:text-6xl">
+                Porta nella tua azienda un reparto marketing sempre operativo.
               </h2>
 
-              <p className="mt-5 max-w-2xl text-sm leading-7 text-[#B7C7DA]">
-                Parti da un’analisi reale e configura agenti, contenuti,
-                automazioni e processi commerciali su misura.
+              <p className="mt-6 max-w-2xl text-sm leading-7 text-[#C5D2E1]">
+                Parti dall’analisi e configura strategia, contenuti,
+                automazioni e sviluppo commerciale.
               </p>
             </div>
 
             <Link
               href="/projects/new"
-              className="group inline-flex min-h-14 shrink-0 items-center justify-center gap-4 rounded-[14px] bg-[#FF6B1A] px-7 text-xs font-semibold text-white shadow-[0_18px_45px_rgba(0,0,0,.25)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
+              className="group inline-flex min-h-14 shrink-0 items-center justify-center gap-4 rounded-[14px] bg-[#FF6B1A] px-7 text-xs font-bold text-white shadow-[0_18px_45px_rgba(0,0,0,.25)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
             >
-              Avvia una nuova intelligence
+              Avvia il progetto
               <ArrowRight
                 size={16}
                 className="transition group-hover:translate-x-1"
               />
             </Link>
           </div>
-        </section>
+        </div>
       </section>
+
+      <footer className="relative z-10 border-t border-white/[0.08] bg-[#050C16]">
+        <div className="mx-auto flex max-w-[1600px] flex-col justify-between gap-6 px-5 py-10 md:flex-row md:items-center md:px-10">
+          <div className="flex items-center gap-4">
+            <Image
+              src="/uviq-logo.svg"
+              alt="UVIQ"
+              width={42}
+              height={42}
+              className="size-11 object-contain"
+            />
+
+            <div>
+              <p className="text-lg font-bold tracking-[-0.04em]">
+                UVIQ
+              </p>
+
+              <p className="mt-1 text-[7px] uppercase tracking-[0.2em] text-[#8192A8]">
+                AI Business Operating System
+              </p>
+            </div>
+          </div>
+
+          <p className="text-[9px] text-[#8192A8]">
+            © 2026 UVIQ · Univibe Group
+          </p>
+        </div>
+      </footer>
     </main>
   );
 }
 
+function Navbar() {
+  const navItems = [
+    ["Prodotto", "#product"],
+    ["Funzioni", "#functions"],
+    ["Settori", "#sectors"],
+    ["Reparto AI", "#department"],
+    ["Pricing", "#pricing"],
+  ];
 
-function NavItem({
-  href,
-  label,
-  active = false,
-}: {
-  href: string;
-  label: string;
-  active?: boolean;
-}) {
   return (
-    <a
-      href={href}
-      className="group relative flex min-h-14 items-center justify-center px-1 text-[11px] font-semibold text-white transition hover:text-[#FF8A4A]"
-    >
-      {label}
+    <header className="sticky top-0 z-50 px-4 pt-4 md:px-7">
+      <div className="mx-auto max-w-[1600px] overflow-hidden rounded-[20px] border border-white/[0.1] bg-[#081425]/95 shadow-[0_20px_60px_rgba(0,0,0,.35)] backdrop-blur-2xl">
+        <div className="flex min-h-[92px] items-center justify-between px-5 md:px-8">
+          <Link href="/" className="flex items-center gap-4">
+            <span className="flex size-14 items-center justify-center rounded-[14px] border border-[#2492E8]/20 bg-[#0D1D34] p-2">
+              <Image
+                src="/uviq-logo.svg"
+                alt="UVIQ"
+                width={44}
+                height={44}
+                priority
+                className="size-full object-contain"
+              />
+            </span>
 
-      <span
-        className={`absolute bottom-1 size-1.5 rounded-full transition ${
-          active
-            ? "bg-[#FF6B1A] shadow-[0_0_12px_rgba(255,107,26,.85)]"
-            : "scale-0 bg-[#2492E8] group-hover:scale-100"
-        }`}
-      />
-    </a>
-  );
-}
+            <span className="hidden sm:block">
+              <span className="flex items-center gap-3">
+                <span className="text-2xl font-bold tracking-[-0.06em]">
+                  UVIQ
+                </span>
 
-function MobileNavItem({
-  href,
-  label,
-  active = false,
-}: {
-  href: string;
-  label: string;
-  active?: boolean;
-}) {
-  return (
-    <a
-      href={href}
-      className={`relative flex min-h-12 items-center justify-center border-r border-white/[0.06] px-2 text-center text-[8px] font-semibold uppercase tracking-[0.08em] last:border-r-0 ${
-        active
-          ? "bg-[#FF6B1A]/[0.08] text-white"
-          : "text-[#B8C5D6]"
-      }`}
-    >
-      {label}
+                <span className="rounded-full bg-[#2492E8] px-3 py-1.5 text-[7px] font-bold uppercase tracking-[0.12em]">
+                  AI OS
+                </span>
+              </span>
 
-      {active && (
-        <span className="absolute bottom-0 h-0.5 w-8 rounded-full bg-[#FF6B1A]" />
-      )}
-    </a>
-  );
-}
+              <span className="mt-1 block text-[7px] font-semibold uppercase tracking-[0.28em] text-[#B7C4D4]">
+                AI Business Operating System
+              </span>
+            </span>
+          </Link>
 
-function OperatingSystemPanel() {
-  return (
-    <div className="relative">
-      <div className="absolute inset-14 rounded-[70px] bg-[#2492E8]/10 blur-[120px]" />
-      <div className="absolute inset-20 translate-x-16 rounded-[70px] bg-[#FF6B1A]/10 blur-[120px]" />
+          <nav className="hidden items-center gap-8 lg:flex">
+            {navItems.map(([label, href], index) => (
+              <a
+                key={label}
+                href={href}
+                className="group relative flex min-h-12 items-center text-[10px] font-bold text-white transition hover:text-[#FF8A4A]"
+              >
+                {label}
 
-      <div className="relative overflow-hidden rounded-[24px] border border-white/[0.09] bg-[#0B1628] p-4 shadow-[0_40px_100px_rgba(0,0,0,.38)] md:p-5">
-        <div className="flex items-center justify-between border-b border-white/[0.07] pb-4">
-          <div className="flex gap-2">
-            <span className="size-2.5 rounded-full bg-[#FF5F57]" />
-            <span className="size-2.5 rounded-full bg-[#FEBC2E]" />
-            <span className="size-2.5 rounded-full bg-[#28C840]" />
+                <span
+                  className={`absolute bottom-0 h-0.5 rounded-full transition-all ${
+                    index === 0
+                      ? "w-full bg-[#FF6B1A]"
+                      : "w-0 bg-[#2492E8] group-hover:w-full"
+                  }`}
+                />
+              </a>
+            ))}
+          </nav>
+
+          <div className="flex items-center gap-3">
+            <Link
+              href="/dashboard"
+              className="hidden min-h-12 items-center gap-3 rounded-[13px] border border-white/[0.13] bg-[#091323] px-5 text-[10px] font-bold text-white transition hover:border-[#2492E8]/40 hover:bg-[#0E1C31] md:inline-flex"
+            >
+              <LayoutGrid size={15} className="text-[#2492E8]" />
+              Workspace
+            </Link>
+
+            <Link
+              href="/projects/new"
+              className="inline-flex min-h-12 items-center gap-3 rounded-[13px] bg-[#FF6B1A] px-5 text-[10px] font-bold text-white shadow-[0_12px_34px_rgba(255,107,26,.3)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
+            >
+              Nuovo progetto
+              <ArrowRight size={14} />
+            </Link>
           </div>
-
-          <span className="rounded-full border border-white/[0.065] bg-[#07111F] px-4 py-2 text-[8px] text-[#607089]">
-            app.uviq.ai/mission-control
-          </span>
-
-          <Sparkles size={14} className="text-[#FF8A4A]" />
         </div>
 
-        <div className="mt-4 grid gap-4 md:grid-cols-[1.2fr_0.8fr]">
-          <section className="min-h-[500px] rounded-[18px] border border-white/[0.07] bg-[#101B2E] p-6">
-            <div className="flex items-start justify-between">
-              <div>
-                <p className="text-[8px] font-semibold uppercase tracking-[0.18em] text-[#2492E8]">
-                  CEO AI
-                </p>
+        <nav className="grid grid-cols-5 border-t border-white/[0.08] lg:hidden">
+          {navItems.map(([label, href]) => (
+            <a
+              key={label}
+              href={href}
+              className="flex min-h-11 items-center justify-center border-r border-white/[0.06] px-1 text-center text-[7px] font-bold uppercase tracking-[0.08em] text-white last:border-0"
+            >
+              {label}
+            </a>
+          ))}
+        </nav>
+      </div>
+    </header>
+  );
+}
 
-                <h2 className="mt-2 text-xl font-semibold">
-                  Autonomous department
-                </h2>
-              </div>
+function Background() {
+  return (
+    <>
+      <div className="pointer-events-none fixed inset-0 bg-[linear-gradient(rgba(255,255,255,.018)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,.018)_1px,transparent_1px)] bg-[size:72px_72px]" />
+      <div className="pointer-events-none fixed -left-72 -top-64 size-[48rem] rounded-full bg-[#2492E8]/[0.09] blur-[170px]" />
+      <div className="pointer-events-none fixed -right-72 top-0 size-[52rem] rounded-full bg-[#6D4FD2]/[0.09] blur-[180px]" />
+    </>
+  );
+}
 
-              <span className="flex size-10 items-center justify-center rounded-[12px] border border-[#24D27C]/18 bg-[#24D27C]/[0.06]">
-                <span className="size-2 rounded-full bg-[#24D27C] shadow-[0_0_16px_rgba(36,210,124,.75)]" />
+function SectionHeading({
+  eyebrow,
+  title,
+  description,
+}: {
+  eyebrow: string;
+  title: string;
+  description: string;
+}) {
+  return (
+    <div className="max-w-4xl">
+      <p className="text-[9px] font-bold uppercase tracking-[0.2em] text-[#2492E8]">
+        {eyebrow}
+      </p>
+
+      <h2 className="mt-5 text-4xl font-semibold leading-[1] tracking-[-0.055em] md:text-6xl">
+        {title}
+      </h2>
+
+      <p className="mt-6 max-w-3xl text-sm leading-8 text-[#C0CDDD]">
+        {description}
+      </p>
+    </div>
+  );
+}
+
+function HeroMetric({
+  value,
+  label,
+}: {
+  value: string;
+  label: string;
+}) {
+  return (
+    <div className="rounded-[14px] border border-white/[0.09] bg-[#0B1628] p-4">
+      <p className="text-2xl font-semibold tracking-[-0.04em]">
+        {value}
+      </p>
+
+      <p className="mt-2 text-[8px] font-bold uppercase tracking-[0.12em] text-[#AAB9CC]">
+        {label}
+      </p>
+    </div>
+  );
+}
+
+function MissionControlPreview() {
+  return (
+    <div className="relative overflow-hidden rounded-[24px] border border-white/[0.1] bg-[#0B1628] p-5 shadow-[0_40px_100px_rgba(0,0,0,.4)]">
+      <div className="flex items-center justify-between border-b border-white/[0.08] pb-4">
+        <div className="flex gap-2">
+          <span className="size-2.5 rounded-full bg-[#FF5F57]" />
+          <span className="size-2.5 rounded-full bg-[#FEBC2E]" />
+          <span className="size-2.5 rounded-full bg-[#28C840]" />
+        </div>
+
+        <span className="rounded-full border border-white/[0.08] bg-[#07111F] px-4 py-2 text-[8px] text-[#AAB9CC]">
+          mission-control.uviq.ai
+        </span>
+
+        <Sparkles size={14} className="text-[#FF8A4A]" />
+      </div>
+
+      <div className="mt-5 grid gap-4 md:grid-cols-[1.15fr_0.85fr]">
+        <div className="rounded-[18px] border border-white/[0.08] bg-[#101B2E] p-6">
+          <div className="flex items-center justify-between">
+            <div>
+              <p className="text-[8px] font-bold uppercase tracking-[0.18em] text-[#69BDF2]">
+                CEO AI
+              </p>
+
+              <h3 className="mt-2 text-xl font-semibold">
+                Marketing department
+              </h3>
+            </div>
+
+            <span className="size-3 rounded-full bg-[#24D27C] shadow-[0_0_16px_rgba(36,210,124,.8)]" />
+          </div>
+
+          <div className="mt-8 flex min-h-[230px] items-center justify-center">
+            <div className="relative flex size-44 items-center justify-center rounded-full border border-[#2492E8]/20">
+              <div className="absolute size-32 rounded-full border border-[#6D4FD2]/25" />
+
+              <span className="relative flex size-20 items-center justify-center rounded-[22px] bg-gradient-to-br from-[#2492E8]/30 via-[#6D4FD2]/25 to-[#FF6B1A]/20">
+                <BrainCircuit size={34} />
               </span>
             </div>
-
-            <div className="relative mt-8 flex min-h-[250px] items-center justify-center">
-              <div className="absolute size-48 rounded-full border border-[#2492E8]/15" />
-              <div className="absolute size-36 rounded-full border border-[#6D4FD2]/20" />
-              <div className="absolute size-24 rounded-full border border-[#FF6B1A]/18" />
-
-              <div className="relative flex size-20 items-center justify-center rounded-[22px] border border-[#2492E8]/25 bg-gradient-to-br from-[#2492E8]/20 via-[#6D4FD2]/20 to-[#FF6B1A]/15 text-white shadow-[0_0_55px_rgba(36,146,232,.18)]">
-                <BrainCircuit size={34} strokeWidth={1.3} />
-              </div>
-
-              <FloatingAgent
-                position="left-0 top-2"
-                label="Research"
-                icon={Search}
-                color="#2492E8"
-              />
-
-              <FloatingAgent
-                position="right-0 top-2"
-                label="Strategy"
-                icon={Target}
-                color="#6D4FD2"
-              />
-
-              <FloatingAgent
-                position="bottom-2 left-0"
-                label="Creative"
-                icon={Megaphone}
-                color="#FF6B1A"
-              />
-
-              <FloatingAgent
-                position="bottom-2 right-0"
-                label="Automation"
-                icon={Workflow}
-                color="#24D27C"
-              />
-            </div>
-
-            <div className="mt-7 space-y-4">
-              <ProgressLine
-                label="Dati analizzati"
-                value="128"
-                progress={88}
-                color="#2492E8"
-              />
-
-              <ProgressLine
-                label="Azioni pianificate"
-                value="36"
-                progress={72}
-                color="#6D4FD2"
-              />
-
-              <ProgressLine
-                label="Automazioni attive"
-                value="12"
-                progress={58}
-                color="#FF6B1A"
-              />
-            </div>
-          </section>
+          </div>
 
           <div className="space-y-4">
-            <SmallMetric
-              icon={TrendingUp}
-              label="Growth potential"
-              value="€ 42.600"
-              color="#FF6B1A"
-            />
-
-            <SmallMetric
-              icon={Bot}
-              label="AI Employees"
-              value="12"
+            <PreviewProgress
+              label="Dati analizzati"
+              value="128"
+              progress="88%"
               color="#2492E8"
             />
 
-            <section className="rounded-[18px] border border-white/[0.07] bg-[#101B2E] p-5">
-              <p className="text-[8px] uppercase tracking-[0.16em] text-[#607089]">
-                Department status
-              </p>
+            <PreviewProgress
+              label="Azioni pianificate"
+              value="36"
+              progress="72%"
+              color="#6D4FD2"
+            />
 
-              <div className="mt-5 space-y-4">
-                {[
-                  ["Research", "#2492E8"],
-                  ["Strategy", "#6D4FD2"],
-                  ["Content", "#FF6B1A"],
-                  ["Automation", "#24D27C"],
-                ].map(([label, color]) => (
-                  <div key={label} className="flex items-center gap-3">
-                    <span
-                      className="size-2 rounded-full"
-                      style={{ backgroundColor: color }}
-                    />
+            <PreviewProgress
+              label="Automazioni attive"
+              value="12"
+              progress="58%"
+              color="#FF6B1A"
+            />
+          </div>
+        </div>
 
-                    <span className="min-w-0 flex-1 text-[9px] text-[#B7C7DA]">
-                      {label}
+        <div className="space-y-4">
+          <PreviewMetric
+            icon={TrendingUp}
+            label="Growth potential"
+            value="€42.600"
+            color="#FF6B1A"
+          />
+
+          <PreviewMetric
+            icon={Bot}
+            label="AI employees"
+            value="12"
+            color="#2492E8"
+          />
+
+          <div className="rounded-[18px] border border-white/[0.08] bg-[#101B2E] p-5">
+            <p className="text-[8px] font-bold uppercase tracking-[0.15em] text-[#AAB9CC]">
+              Department
+            </p>
+
+            <div className="mt-5 space-y-4">
+              {["Research", "Strategy", "Content", "Automation"].map(
+                (item) => (
+                  <div key={item} className="flex items-center gap-3">
+                    <span className="size-2 rounded-full bg-[#24D27C]" />
+                    <span className="flex-1 text-[9px] text-white">
+                      {item}
                     </span>
-
-                    <span className="text-[7px] font-semibold uppercase tracking-[0.1em] text-[#66E7A6]">
+                    <span className="text-[7px] font-bold uppercase text-[#8AF0BA]">
                       Online
                     </span>
                   </div>
-                ))}
-              </div>
-            </section>
+                ),
+              )}
+            </div>
           </div>
         </div>
       </div>
@@ -692,42 +848,7 @@ function OperatingSystemPanel() {
   );
 }
 
-function FloatingAgent({
-  position,
-  label,
-  icon: Icon,
-  color,
-}: {
-  position: string;
-  label: string;
-  icon: typeof Search;
-  color: string;
-}) {
-  return (
-    <div
-      className={`absolute ${position} rounded-[13px] border border-white/[0.075] bg-[#0B1628] p-3 shadow-xl`}
-    >
-      <div className="flex items-center gap-3">
-        <span
-          className="flex size-8 items-center justify-center rounded-[10px]"
-          style={{
-            color,
-            backgroundColor: `${color}18`,
-          }}
-        >
-          <Icon size={14} />
-        </span>
-
-        <div>
-          <p className="text-[9px] font-semibold">{label}</p>
-          <p className="mt-1 text-[6px] text-[#607089]">Working</p>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-function ProgressLine({
+function PreviewProgress({
   label,
   value,
   progress,
@@ -735,21 +856,21 @@ function ProgressLine({
 }: {
   label: string;
   value: string;
-  progress: number;
+  progress: string;
   color: string;
 }) {
   return (
     <div>
-      <div className="flex items-center justify-between text-[8px]">
-        <span className="text-[#607089]">{label}</span>
-        <span className="font-semibold text-[#D7E1EC]">{value}</span>
+      <div className="flex justify-between text-[8px]">
+        <span className="text-[#AAB9CC]">{label}</span>
+        <span className="font-bold text-white">{value}</span>
       </div>
 
-      <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/[0.06]">
+      <div className="mt-2 h-1 overflow-hidden rounded-full bg-white/[0.07]">
         <div
           className="h-full rounded-full"
           style={{
-            width: `${progress}%`,
+            width: progress,
             backgroundColor: color,
           }}
         />
@@ -758,7 +879,7 @@ function ProgressLine({
   );
 }
 
-function SmallMetric({
+function PreviewMetric({
   icon: Icon,
   label,
   value,
@@ -770,25 +891,15 @@ function SmallMetric({
   color: string;
 }) {
   return (
-    <section className="rounded-[18px] border border-white/[0.07] bg-[#101B2E] p-5">
-      <span
-        className="flex size-10 items-center justify-center rounded-[12px]"
-        style={{
-          color,
-          backgroundColor: `${color}16`,
-        }}
-      >
-        <Icon size={17} />
-      </span>
+    <div className="rounded-[18px] border border-white/[0.08] bg-[#101B2E] p-5">
+      <Icon size={18} style={{ color }} />
 
-      <p className="mt-5 text-[7px] font-semibold uppercase tracking-[0.14em] text-[#607089]">
+      <p className="mt-5 text-[7px] font-bold uppercase tracking-[0.14em] text-[#AAB9CC]">
         {label}
       </p>
 
-      <p className="mt-2 text-2xl font-semibold tracking-[-0.04em]">
-        {value}
-      </p>
-    </section>
+      <p className="mt-2 text-2xl font-semibold">{value}</p>
+    </div>
   );
 }
 
@@ -797,19 +908,21 @@ function ValuePoint({
   title,
   text,
 }: {
-  icon: typeof ShieldCheck;
+  icon: typeof Network;
   title: string;
   text: string;
 }) {
   return (
-    <div className="flex items-start gap-4 rounded-[14px] border border-white/[0.065] bg-[#07111F]/50 p-4">
-      <span className="flex size-9 shrink-0 items-center justify-center rounded-[11px] border border-[#2492E8]/18 bg-[#2492E8]/[0.07] text-[#69BDF2]">
-        <Icon size={15} />
+    <div className="flex items-start gap-4 rounded-[15px] border border-white/[0.1] bg-[#07111F]/40 p-5">
+      <span className="flex size-10 shrink-0 items-center justify-center rounded-[12px] bg-[#2492E8]/10 text-[#69BDF2]">
+        <Icon size={17} />
       </span>
 
       <div>
-        <h3 className="text-xs font-semibold">{title}</h3>
-        <p className="mt-2 text-[10px] leading-5 text-[#91A4BF]">{text}</p>
+        <h3 className="text-sm font-semibold">{title}</h3>
+        <p className="mt-2 text-[10px] leading-6 text-[#C0CDDD]">
+          {text}
+        </p>
       </div>
     </div>
   );
