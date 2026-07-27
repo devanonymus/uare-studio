@@ -6,7 +6,9 @@
     "dev": "next dev -p 3006",
     "build": "next build",
     "start": "next start -p 3006",
-    "lint": "eslint"
+    "lint": "eslint",
+    "test:smoke": "node scripts/smoke-uviq.mjs",
+    "test:e2e": "node scripts/e2e-uviq.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.25.0",
