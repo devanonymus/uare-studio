@@ -739,3 +739,152 @@ html {
 body {
   overflow-anchor: none;
 }
+
+/* =========================================================
+   UVIQ PROFESSIONAL TYPOGRAPHY
+   ========================================================= */
+
+:root {
+  --font-sans:
+    var(--font-uviq-sans),
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  --font-display:
+    var(--font-uviq-display),
+    var(--font-uviq-sans),
+    Arial,
+    Helvetica,
+    sans-serif;
+
+  --font-mono:
+    var(--font-uviq-mono),
+    "SFMono-Regular",
+    Consolas,
+    monospace;
+}
+
+html,
+body {
+  font-family: var(--font-sans);
+  font-feature-settings:
+    "cv02" 1,
+    "cv03" 1,
+    "cv04" 1,
+    "cv11" 1;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body,
+button,
+input,
+select,
+textarea {
+  font-family: var(--font-sans);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
+  font-style: normal;
+  text-wrap: balance;
+}
+
+h1 {
+  font-weight: 650;
+  letter-spacing: -0.045em;
+}
+
+h2 {
+  font-weight: 640;
+  letter-spacing: -0.035em;
+}
+
+h3 {
+  font-weight: 620;
+  letter-spacing: -0.022em;
+}
+
+p {
+  letter-spacing: -0.008em;
+}
+
+button,
+a {
+  letter-spacing: -0.008em;
+}
+
+.font-mono,
+code,
+pre,
+kbd {
+  font-family: var(--font-mono);
+}
+
+/*
+ * Correzione delle classi precedenti troppo spinte.
+ * Mantiene personalità senza sembrare una demo generata.
+ */
+
+.tracking-\[-0\.075em\] {
+  letter-spacing: -0.052em !important;
+}
+
+.tracking-\[-0\.06em\] {
+  letter-spacing: -0.043em !important;
+}
+
+.tracking-\[-0\.055em\] {
+  letter-spacing: -0.04em !important;
+}
+
+.tracking-\[-0\.052em\] {
+  letter-spacing: -0.039em !important;
+}
+
+.tracking-\[-0\.05em\] {
+  letter-spacing: -0.038em !important;
+}
+
+.tracking-\[-0\.045em\] {
+  letter-spacing: -0.032em !important;
+}
+
+.tracking-\[-0\.04em\] {
+  letter-spacing: -0.029em !important;
+}
+
+.tracking-\[-0\.035em\] {
+  letter-spacing: -0.025em !important;
+}
+
+.tracking-\[-0\.03em\] {
+  letter-spacing: -0.021em !important;
+}
+
+/*
+ * Le micro-label restano tecniche, ma più leggibili.
+ */
+
+[class*="uppercase"][class*="tracking-"] {
+  font-weight: 650;
+}
+
+/*
+ * Evita pesi artificialmente troppo bold nella UI.
+ */
+
+.font-bold {
+  font-weight: 650;
+}
+
+.font-semibold {
+  font-weight: 600;
+}

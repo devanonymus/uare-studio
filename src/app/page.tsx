@@ -209,7 +209,7 @@ export default function HomePage() {
               </span>
             </div>
 
-            <h1 className="mt-8 max-w-5xl text-[clamp(4rem,7vw,8rem)] font-semibold leading-[0.87] tracking-[-0.075em]">
+            <h1 className="mt-8 max-w-5xl text-[clamp(3.7rem,6.6vw,7.4rem)] font-semibold leading-[0.92] tracking-[-0.052em]">
               Il reparto
               <br />
               marketing della
@@ -406,7 +406,7 @@ export default function HomePage() {
               AI Marketing Department
             </p>
 
-            <h2 className="mt-5 text-4xl font-semibold leading-[0.98] tracking-[-0.055em] md:text-6xl">
+            <h2 className="mt-5 text-4xl font-semibold leading-[1.02] tracking-[-0.038em] md:text-6xl">
               Non un insieme
               <br />
               di strumenti.
@@ -526,7 +526,7 @@ export default function HomePage() {
                 Deploy UVIQ
               </p>
 
-              <h2 className="mt-5 max-w-5xl text-4xl font-semibold leading-[0.98] tracking-[-0.055em] md:text-6xl">
+              <h2 className="mt-5 max-w-5xl text-4xl font-semibold leading-[1.02] tracking-[-0.038em] md:text-6xl">
                 Porta nella tua azienda un reparto marketing sempre operativo.
               </h2>
 
@@ -606,7 +606,7 @@ function SectionHeading({
         {eyebrow}
       </p>
 
-      <h2 className="mt-5 text-4xl font-semibold leading-[1] tracking-[-0.055em] md:text-6xl">
+      <h2 className="mt-5 text-4xl font-semibold leading-[1.04] tracking-[-0.038em] md:text-6xl">
         {title}
       </h2>
 

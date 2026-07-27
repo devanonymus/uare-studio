@@ -331,16 +331,16 @@ export function HomeNavbar() {
 
             <span className="hidden sm:block">
               <span className="flex items-center gap-3">
-                <span className="text-2xl font-bold tracking-[-0.06em] text-white">
+                <span className="text-2xl font-semibold tracking-[-0.035em] text-white">
                   UVIQ
                 </span>
 
-                <span className="rounded-full bg-[#2492E8] px-3 py-1.5 text-[7px] font-bold uppercase tracking-[0.12em] text-white">
+                <span className="rounded-full bg-[#2492E8] px-3 py-1.5 text-[8px] font-semibold uppercase tracking-[0.12em] text-white">
                   AI OS
                 </span>
               </span>
 
-              <span className="mt-1 block text-[7px] font-semibold uppercase tracking-[0.28em] text-[#D3DCE8]">
+              <span className="mt-1 block text-[7px] font-medium uppercase tracking-[0.22em] text-[#D3DCE8]">
                 AI Business Operating System
               </span>
             </span>
@@ -360,7 +360,7 @@ export function HomeNavbar() {
                       item.id,
                     )
                   }
-                  className={`group relative flex min-h-12 cursor-pointer items-center border-0 bg-transparent px-1 text-[10px] font-bold transition ${
+                  className={`group relative flex min-h-12 cursor-pointer items-center border-0 bg-transparent px-1 text-[11px] font-semibold transition ${
                     active
                       ? "text-white"
                       : "text-[#D3DCE8] hover:text-white"
@@ -380,7 +380,7 @@ export function HomeNavbar() {
             })}
             <Link
               href="/pricing"
-              className="relative flex min-h-12 items-center px-1 text-[10px] font-bold text-[#D3DCE8] transition hover:text-[#FF8A4A]"
+              className="relative flex min-h-12 items-center px-1 text-[11px] font-semibold text-[#D3DCE8] transition hover:text-[#FF8A4A]"
             >
               Pricing
             </Link>
@@ -389,7 +389,7 @@ export function HomeNavbar() {
           <div className="flex items-center gap-3">
             <Link
               href="/dashboard"
-              className="hidden min-h-12 items-center gap-3 rounded-[13px] border border-white/[0.13] bg-[#091323] px-5 text-[10px] font-bold text-white transition hover:border-[#2492E8]/40 hover:bg-[#0E1C31] md:inline-flex"
+              className="hidden min-h-12 items-center gap-3 rounded-[13px] border border-white/[0.13] bg-[#091323] px-5 text-[11px] font-semibold text-white transition hover:border-[#2492E8]/40 hover:bg-[#0E1C31] md:inline-flex"
             >
               <LayoutGrid
                 size={15}
@@ -400,7 +400,7 @@ export function HomeNavbar() {
 
             <Link
               href="/projects/new"
-              className="inline-flex min-h-12 items-center gap-3 rounded-[13px] bg-[#FF6B1A] px-5 text-[10px] font-bold text-white shadow-[0_12px_34px_rgba(255,107,26,.3)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
+              className="inline-flex min-h-12 items-center gap-3 rounded-[13px] bg-[#FF6B1A] px-5 text-[11px] font-semibold text-white shadow-[0_12px_34px_rgba(255,107,26,.3)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
             >
               Nuovo progetto
               <ArrowRight size={14} />
@@ -422,7 +422,7 @@ export function HomeNavbar() {
                     item.id,
                   )
                 }
-                className={`relative flex min-h-11 cursor-pointer items-center justify-center border-0 border-r border-white/[0.06] bg-transparent px-1 text-center text-[7px] font-bold uppercase tracking-[0.08em] last:border-r-0 ${
+                className={`relative flex min-h-11 cursor-pointer items-center justify-center border-0 border-r border-white/[0.06] bg-transparent px-1 text-center text-[8px] font-semibold uppercase tracking-[0.08em] last:border-r-0 ${
                   active
                     ? "bg-[#FF6B1A]/10 text-white"
                     : "text-[#D3DCE8]"
@@ -439,7 +439,7 @@ export function HomeNavbar() {
 
           <Link
             href="/pricing"
-            className="relative flex min-h-11 items-center justify-center border-l border-white/[0.06] px-1 text-center text-[7px] font-bold uppercase tracking-[0.08em] text-[#D3DCE8]"
+            className="relative flex min-h-11 items-center justify-center border-l border-white/[0.06] px-1 text-center text-[8px] font-semibold uppercase tracking-[0.08em] text-[#D3DCE8]"
           >
             Pricing
           </Link>

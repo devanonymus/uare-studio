@@ -1,16 +1,33 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import {
+  IBM_Plex_Mono,
+  Inter,
+  Inter_Tight,
+} from "next/font/google";
 import { PRODUCT } from "@/core/brand/identity";
 import "./globals.css";
 
-const geist = Geist({
+const inter = Inter({
   subsets: ["latin"],
-  variable: "--font-geist",
+  display: "swap",
+  variable: "--font-uviq-sans",
 });
 
-const geistMono = Geist_Mono({
+const interTight = Inter_Tight({
   subsets: ["latin"],
-  variable: "--font-geist-mono",
+  display: "swap",
+  variable: "--font-uviq-display",
+});
+
+const plexMono = IBM_Plex_Mono({
+  subsets: ["latin"],
+  weight: [
+    "400",
+    "500",
+    "600",
+  ],
+  display: "swap",
+  variable: "--font-uviq-mono",
 });
 
 export const metadata: Metadata = {
@@ -40,12 +57,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="it" data-scroll-behavior="smooth">
-      <body
-        className={`${geist.variable} ${geistMono.variable}`}
-      >
-        {children}
-      </body>
+    <html
+      lang="it"
+      data-scroll-behavior="smooth"
+      className={`${inter.variable} ${interTight.variable} ${plexMono.variable}`}
+    >
+      <body>{children}</body>
     </html>
   );
 }
