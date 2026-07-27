@@ -3,7 +3,7 @@ import fs from "node:fs/promises";
 import path from "node:path";
 
 const BASE_URL =
-  process.env.UVIQ_URL || "http://localhost:3006";
+  process.env.UVIQ_URL || "http://127.0.0.1:3006";
 
 const OUTPUT_DIR = path.resolve(
   process.cwd(),
@@ -28,6 +28,9 @@ const context = await browser.newContext({
 });
 
 const page = await context.newPage();
+
+page.setDefaultTimeout(15000);
+page.setDefaultNavigationTimeout(20000);
 
 page.on("console", (message) => {
   if (message.type() === "error") {
@@ -79,15 +82,21 @@ try {
   await step(
     "Verifica server UVIQ",
     async () => {
-      const response = await page.request.get(
+      const response = await page.goto(
         BASE_URL,
+        {
+          waitUntil: "domcontentloaded",
+          timeout: 15000,
+        },
       );
 
-      if (!response.ok()) {
+      if (!response || !response.ok()) {
         throw new Error(
-          `Server non disponibile: ${response.status()}`,
+          `Server non disponibile: ${response?.status() ?? "nessuna risposta"}`,
         );
       }
+
+      await page.waitForTimeout(500);
     },
   );
 
