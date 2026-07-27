@@ -1301,3 +1301,45 @@ section [class*="text-sm"] {
 }
 
 
+
+/* =========================================================
+   UVIQ CLIENT REPORT PRINT
+   ========================================================= */
+
+@media print {
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
+
+  html,
+  body {
+    background: #ffffff !important;
+    color: #111827 !important;
+  }
+
+  body {
+    font-size: 11pt;
+  }
+
+  aside,
+  nav,
+  .print\:hidden {
+    display: none !important;
+  }
+
+  main {
+    background: #ffffff !important;
+  }
+
+  section,
+  article {
+    break-inside: avoid;
+    box-shadow: none !important;
+  }
+
+  a {
+    color: inherit !important;
+    text-decoration: none !important;
+  }
+}
