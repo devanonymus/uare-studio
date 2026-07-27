@@ -10,6 +10,7 @@ import {
   CircleDot,
   FileVideo2,
   Globe2,
+  LayoutGrid,
   Megaphone,
   MessageSquareText,
   Network,
@@ -103,81 +104,96 @@ export default function HomePage() {
       <div className="pointer-events-none fixed -right-72 top-0 size-[52rem] rounded-full bg-[#6D4FD2]/[0.11] blur-[180px]" />
       <div className="pointer-events-none fixed bottom-[-26rem] left-1/3 size-[46rem] rounded-full bg-[#FF6B1A]/[0.08] blur-[180px]" />
 
-      <header className="relative z-30 mx-auto flex max-w-[1600px] items-center justify-between px-5 py-5 md:px-10">
-        <Link href="/" className="flex items-center gap-3">
-          <span className="flex size-12 items-center justify-center rounded-[14px] border border-white/[0.08] bg-white/[0.035] p-2">
-            <Image
-              src="/uviq-logo.svg"
-              alt="UVIQ"
-              width={38}
-              height={38}
-              priority
-              className="size-full object-contain"
-            />
-          </span>
+      <header className="relative z-30 px-4 pt-5 md:px-7 md:pt-7">
+        <div className="mx-auto max-w-[1600px]">
+          <div className="relative overflow-hidden rounded-[22px] border border-white/[0.09] bg-[#081425]/95 shadow-[0_24px_70px_rgba(0,0,0,.32)] backdrop-blur-2xl">
+            <div className="pointer-events-none absolute inset-0 rounded-[22px] bg-[linear-gradient(100deg,rgba(36,146,232,.18),transparent_28%,transparent_72%,rgba(255,107,26,.16))] opacity-80" />
 
-          <div>
-            <div className="flex items-center gap-2">
-              <span className="text-xl font-bold tracking-[-0.055em]">
-                UVIQ
-              </span>
+            <div className="pointer-events-none absolute inset-x-10 top-0 h-px bg-gradient-to-r from-[#2492E8]/80 via-white/10 to-[#FF6B1A]/80" />
 
-              <span className="rounded-full border border-[#2492E8]/20 bg-[#2492E8]/10 px-2 py-1 text-[7px] font-semibold uppercase tracking-[0.14em] text-[#69BDF2]">
-                AI OS
-              </span>
+            <div className="relative flex min-h-[108px] items-center justify-between px-5 md:px-7 xl:px-9">
+              <Link
+                href="/"
+                className="group flex shrink-0 items-center gap-4"
+              >
+                <span className="flex size-16 items-center justify-center rounded-[16px] border border-[#2492E8]/15 bg-[#0D1D34] p-2.5 shadow-[0_12px_30px_rgba(0,0,0,.28)] transition group-hover:border-[#2492E8]/35">
+                  <Image
+                    src="/uviq-logo.svg"
+                    alt="UVIQ"
+                    width={50}
+                    height={50}
+                    priority
+                    className="size-full object-contain"
+                  />
+                </span>
+
+                <span className="hidden sm:block">
+                  <span className="flex items-center gap-3">
+                    <span className="text-[28px] font-bold tracking-[-0.06em] text-white">
+                      UVIQ
+                    </span>
+
+                    <span className="rounded-full bg-gradient-to-r from-[#2492E8] to-[#4B8EFF] px-3 py-1.5 text-[8px] font-bold uppercase tracking-[0.12em] text-white shadow-[0_8px_20px_rgba(36,146,232,.24)]">
+                      AI OS
+                    </span>
+                  </span>
+
+                  <span className="mt-1.5 block text-[7px] font-semibold uppercase tracking-[0.32em] text-[#AAB9CC]">
+                    AI Business Operating System
+                  </span>
+                </span>
+              </Link>
+
+              <div className="mx-8 hidden h-16 w-px bg-white/[0.07] xl:block" />
+
+              <nav className="hidden flex-1 items-center justify-center gap-10 lg:flex xl:gap-14">
+                <NavItem href="#product" label="Prodotto" active />
+                <NavItem href="#department" label="Reparto AI" />
+                <NavItem href="#capabilities" label="Funzioni" />
+                <NavItem href="#sectors" label="Settori" />
+              </nav>
+
+              <div className="mx-8 hidden h-16 w-px bg-white/[0.07] xl:block" />
+
+              <div className="flex shrink-0 items-center gap-3">
+                <Link
+                  href="/dashboard"
+                  className="hidden min-h-12 items-center gap-3 rounded-[13px] border border-white/[0.12] bg-[#091323] px-5 text-[11px] font-semibold text-white shadow-[0_10px_25px_rgba(0,0,0,.2)] transition hover:border-[#2492E8]/40 hover:bg-[#0E1C31] md:inline-flex"
+                >
+                  <LayoutGrid
+                    size={16}
+                    className="text-[#2492E8]"
+                  />
+                  Workspace
+                </Link>
+
+                <Link
+                  href="/projects/new"
+                  className="group inline-flex min-h-12 items-center gap-3 rounded-[13px] bg-[#FF6B1A] px-5 text-[11px] font-bold text-white shadow-[0_12px_34px_rgba(255,107,26,.32)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34] hover:shadow-[0_16px_42px_rgba(255,107,26,.4)] md:px-6"
+                >
+                  <span className="hidden sm:inline">
+                    Nuovo progetto
+                  </span>
+
+                  <span className="sm:hidden">
+                    Nuovo
+                  </span>
+
+                  <ArrowRight
+                    size={15}
+                    className="transition group-hover:translate-x-1"
+                  />
+                </Link>
+              </div>
             </div>
 
-            <p className="mt-1 text-[6px] uppercase tracking-[0.24em] text-[#607089]">
-              AI Business Operating System
-            </p>
+            <nav className="relative grid grid-cols-4 border-t border-white/[0.07] bg-[#07111F]/70 lg:hidden">
+              <MobileNavItem href="#product" label="Prodotto" active />
+              <MobileNavItem href="#department" label="Reparto AI" />
+              <MobileNavItem href="#capabilities" label="Funzioni" />
+              <MobileNavItem href="#sectors" label="Settori" />
+            </nav>
           </div>
-        </Link>
-
-        <nav className="hidden items-center gap-8 lg:flex">
-          <a
-            href="#product"
-            className="text-[10px] font-medium text-[#91A4BF] transition hover:text-white"
-          >
-            Prodotto
-          </a>
-
-          <a
-            href="#department"
-            className="text-[10px] font-medium text-[#91A4BF] transition hover:text-white"
-          >
-            Reparto AI
-          </a>
-
-          <a
-            href="#capabilities"
-            className="text-[10px] font-medium text-[#91A4BF] transition hover:text-white"
-          >
-            Funzioni
-          </a>
-
-          <a
-            href="#sectors"
-            className="text-[10px] font-medium text-[#91A4BF] transition hover:text-white"
-          >
-            Settori
-          </a>
-        </nav>
-
-        <div className="flex items-center gap-2">
-          <Link
-            href="/dashboard"
-            className="hidden rounded-[12px] border border-white/[0.09] bg-white/[0.03] px-5 py-3 text-[10px] font-semibold text-[#D7E1EC] transition hover:bg-white/[0.06] sm:block"
-          >
-            Workspace
-          </Link>
-
-          <Link
-            href="/projects/new"
-            className="inline-flex items-center gap-2 rounded-[12px] bg-[#FF6B1A] px-5 py-3 text-[10px] font-semibold text-white shadow-[0_12px_34px_rgba(255,107,26,.24)] transition hover:-translate-y-0.5 hover:bg-[#FF7D34]"
-          >
-            Nuovo progetto
-            <ArrowRight size={13} />
-          </Link>
         </div>
       </header>
 
@@ -466,6 +482,61 @@ export default function HomePage() {
         </section>
       </section>
     </main>
+  );
+}
+
+
+function NavItem({
+  href,
+  label,
+  active = false,
+}: {
+  href: string;
+  label: string;
+  active?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      className="group relative flex min-h-14 items-center justify-center px-1 text-[11px] font-semibold text-white transition hover:text-[#FF8A4A]"
+    >
+      {label}
+
+      <span
+        className={`absolute bottom-1 size-1.5 rounded-full transition ${
+          active
+            ? "bg-[#FF6B1A] shadow-[0_0_12px_rgba(255,107,26,.85)]"
+            : "scale-0 bg-[#2492E8] group-hover:scale-100"
+        }`}
+      />
+    </a>
+  );
+}
+
+function MobileNavItem({
+  href,
+  label,
+  active = false,
+}: {
+  href: string;
+  label: string;
+  active?: boolean;
+}) {
+  return (
+    <a
+      href={href}
+      className={`relative flex min-h-12 items-center justify-center border-r border-white/[0.06] px-2 text-center text-[8px] font-semibold uppercase tracking-[0.08em] last:border-r-0 ${
+        active
+          ? "bg-[#FF6B1A]/[0.08] text-white"
+          : "text-[#B8C5D6]"
+      }`}
+    >
+      {label}
+
+      {active && (
+        <span className="absolute bottom-0 h-0.5 w-8 rounded-full bg-[#FF6B1A]" />
+      )}
+    </a>
   );
 }
 
