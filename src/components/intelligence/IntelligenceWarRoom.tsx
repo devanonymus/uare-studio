@@ -173,16 +173,10 @@ export function IntelligenceWarRoom() {
   const [sources, setSources] =
     useState<SourceItem[]>(initialSources);
 
-  const [logs, setLogs] = useState<LogItem[]>([
-    {
-      id: 1,
-      time: currentTime(),
-      level: "info",
-      actor: "System",
-      message:
-        "War Room inizializzata. Nessuna sessione è stata ancora avviata.",
-    },
-  ]);
+  const [logs, setLogs] =
+    useState<LogItem[]>([]);
+
+  const initializedRef = useRef(false);
 
   const [startedAt, setStartedAt] =
     useState<string | null>(null);
@@ -191,6 +185,30 @@ export function IntelligenceWarRoom() {
     useState(0);
 
   const runToken = useRef(0);
+
+  useEffect(() => {
+    /*
+     * L'orario viene creato esclusivamente nel browser.
+     * In questo modo il markup SSR coincide con quello
+     * utilizzato durante l'hydration.
+     */
+    if (initializedRef.current) {
+      return;
+    }
+
+    initializedRef.current = true;
+
+    setLogs([
+      {
+        id: 1,
+        time: currentTime(),
+        level: "info",
+        actor: "System",
+        message:
+          "War Room inizializzata. Nessuna sessione è stata ancora avviata.",
+      },
+    ]);
+  }, []);
 
   const completedSources = useMemo(
     () =>
