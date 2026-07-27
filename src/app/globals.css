@@ -719,23 +719,23 @@ select:focus {
   text-transform: uppercase;
 }
 
-/* =========================================================
-   UVIQ HOME NAVIGATION
-   ========================================================= */
 
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 140px;
-}
 
-body {
-  overflow-anchor: none;
-}
+/* UVIQ STABLE HOME SECTIONS */
 
 #product,
 #functions,
 #sectors,
 #department,
 #pricing {
-  scroll-margin-top: 140px;
+  position: relative;
+  scroll-margin-top: 150px;
+}
+
+html {
+  scroll-behavior: auto;
+}
+
+body {
+  overflow-anchor: none;
 }
