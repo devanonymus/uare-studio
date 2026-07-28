@@ -36,6 +36,62 @@ function memoryStatus(status: string): string {
     : "draft";
 }
 
+function graphStatus(status: unknown): string {
+  const normalized =
+    typeof status === "string"
+      ? status.trim().toLowerCase()
+      : "";
+
+  const statusMap: Record<string, string> = {
+    active: "active",
+    connected: "active",
+    enabled: "active",
+
+    verified: "verified",
+
+    inferred: "inferred",
+    hypothesis: "inferred",
+    conflicted: "inferred",
+
+    missing: "missing",
+    insufficient_data: "missing",
+
+    approved: "approved",
+
+    rejected: "rejected",
+
+    completed: "completed",
+
+    archived: "archived",
+    cancelled: "archived",
+    disabled: "archived",
+
+    created: "draft",
+    draft: "draft",
+    ready: "draft",
+    queued: "draft",
+    collecting: "draft",
+    analysing: "draft",
+    validating: "draft",
+    persisting: "draft",
+    awaiting_approval: "draft",
+    executing: "draft",
+    running: "draft",
+    measuring: "draft",
+    optimising: "draft",
+    paused: "draft",
+    blocked: "draft",
+    configuration_detected: "draft",
+    not_configured: "draft",
+    testing: "draft",
+    degraded: "draft",
+    error: "draft",
+    failed: "draft",
+  };
+
+  return statusMap[normalized] ?? "draft";
+}
+
 async function upsertNode(
   input: KnowledgeNodeInput,
 ): Promise<string> {
@@ -506,7 +562,9 @@ export async function buildKnowledgeGraph(
             mission.objective,
 
           status:
-            mission.status,
+            graphStatus(
+              mission.status,
+            ),
 
           sourceTable:
             "missions",
@@ -583,7 +641,9 @@ export async function buildKnowledgeGraph(
             automation.objective,
 
           status:
-            automation.status,
+            graphStatus(
+              automation.status,
+            ),
 
           sourceTable:
             "automation_blueprints",
@@ -657,7 +717,9 @@ export async function buildKnowledgeGraph(
             artifact.description,
 
           status:
-            artifact.status,
+            graphStatus(
+              artifact.status,
+            ),
 
           sourceTable:
             "automation_artifacts",
@@ -735,10 +797,9 @@ export async function buildKnowledgeGraph(
             `Provider ${integration.provider}`,
 
           status:
-            integration.status ===
-            "connected"
-              ? "active"
-              : "draft",
+            graphStatus(
+              integration.status,
+            ),
 
           sourceTable:
             "integration_connections",
