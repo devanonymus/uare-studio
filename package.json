@@ -17,7 +17,8 @@
     "test:knowledge-graph": "node scripts/test-uviq-knowledge-graph.mjs",
     "test:opportunities": "node scripts/test-uviq-opportunity-engine.mjs",
     "test:opportunity-center": "node --env-file=.env.local scripts/test-uviq-opportunity-center.mjs",
-    "test:mission-planner": "node --env-file=.env.local scripts/test-uviq-mission-planner.mjs"
+    "test:mission-planner": "node --env-file=.env.local scripts/test-uviq-mission-planner.mjs",
+    "test:mission-plan-center": "node --env-file=.env.local scripts/test-uviq-mission-plan-center.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.9",
