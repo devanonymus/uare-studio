@@ -12,7 +12,8 @@
     "test:orchestrator": "node scripts/test-uviq-orchestrator.mjs",
     "test:core": "node scripts/test-uviq-core.mjs",
     "core:bootstrap": "node scripts/bootstrap-uviq-core.mjs",
-    "test:orchestrate:persist": "node scripts/test-uviq-persistent-orchestration.mjs"
+    "test:orchestrate:persist": "node scripts/test-uviq-persistent-orchestration.mjs",
+    "test:automation": "node --env-file=.env.local scripts/test-uviq-automation-execution.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.9",
