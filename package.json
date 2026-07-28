@@ -11,7 +11,8 @@
     "test:e2e": "node scripts/e2e-uviq.mjs",
     "test:orchestrator": "node scripts/test-uviq-orchestrator.mjs",
     "test:core": "node scripts/test-uviq-core.mjs",
-    "core:bootstrap": "node scripts/bootstrap-uviq-core.mjs"
+    "core:bootstrap": "node scripts/bootstrap-uviq-core.mjs",
+    "test:orchestrate:persist": "node scripts/test-uviq-persistent-orchestration.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.9",
