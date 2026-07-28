@@ -15,7 +15,8 @@
     "test:orchestrate:persist": "node scripts/test-uviq-persistent-orchestration.mjs",
     "test:automation": "node --env-file=.env.local scripts/test-uviq-automation-execution.mjs",
     "test:knowledge-graph": "node scripts/test-uviq-knowledge-graph.mjs",
-    "test:opportunities": "node scripts/test-uviq-opportunity-engine.mjs"
+    "test:opportunities": "node scripts/test-uviq-opportunity-engine.mjs",
+    "test:opportunity-center": "node --env-file=.env.local scripts/test-uviq-opportunity-center.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.110.9",
